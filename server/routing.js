@@ -11,12 +11,15 @@ export function getCurrentPage({ answers, flags }) {
 
 // Keep inter-page rules here. Registry insertion order supplies the default path.
 function isEligible({ pageId, flags }) {
+  if (pageId === 'section-m-ropa-controller-content') return flags.actsAsController
+  if (pageId === 'section-m-ropa-processor-content') return flags.actsAsProcessor
   if (['section-k-breach-notification-records', 'section-k-data-subject-communication', 'section-l-dpia-screening'].includes(pageId)) return flags.actsAsController
   if (pageId === 'section-k-processor-breach-reporting') return flags.actsAsProcessor
   if (pageId === 'section-l-dpia-content') return flags.sectionL.hasScreeningIndicators
   if (pageId === 'section-g-rights-process') return flags.actsAsController
   if (['section-h-provider-checks', 'section-h-provider-agreements'].includes(pageId)) return flags.sectionH.usesProviders
   if (pageId === 'section-i-transfer-mechanism') return flags.sectionI.hasReportedTransfers
+  if (pageId === 'section-i-transfer-mechanism-alternatives') return flags.sectionI.adequacyCoverageStatus === 'not-all-reported'
   if (pageId === 'section-b-article-9-condition') return flags.actsAsController && flags.sectionB.specialDataReported === true
   if (pageId === 'section-c-dpo-designation') return flags.sectionC.needsDpoDesignation
   if (pageId === 'section-d-direct-notice-timing') return flags.actsAsController && flags.getsDataDirectly

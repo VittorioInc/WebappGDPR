@@ -74,10 +74,6 @@ export function getPageDefinition({ pageId, flags = {} }) {
   const both = flags.actsAsController && flags.actsAsProcessor
   const processorOnly = flags.actsAsProcessor && !flags.actsAsController
   return { ...definition, questions: definition.questions.map(question => {
-    if (question.id === 'section-m-ropa-content') {
-      const optionGroups = question.optionGroups.filter(group => group.id === 'controller' ? flags.actsAsController : flags.actsAsProcessor)
-      return { ...question, optionGroups, options: question.options.filter(option => optionGroups.some(group => group.optionIds.includes(option.id))) }
-    }
     if (question.id === 'section-e-consent-conditions' && !flags.sectionE?.explicitConsentReported) {
       return { ...question, options: question.options.filter(option => option.id !== 'explicit-consent-where-needed') }
     }
@@ -106,13 +102,12 @@ export function getPageContent({ pageId, locale, flags = {} }) {
     ...(copy.prompt ? { prompt: copy.prompt } : {}),
     ...(copy.scopeNotice ? { scopeNotice: copy.scopeNotice } : {}),
     questions: definition.questions.map(question => {
-      const { variants, detectedNotice, suggestionNotice, exemptionNotice, groupTitles, ...base } = copy.questions[question.id]
+      const { variants, detectedNotice, suggestionNotice, exemptionNotice, ...base } = copy.questions[question.id]
       const role = flags.actsAsProcessor ? (flags.actsAsController ? 'both' : 'processor') : 'controller'
       const variant = variants?.[role] ?? {}
       const translated = { ...base, ...variant }
       const resolved = { ...question, ...translated,
         options: question.options.map(option => ({ ...option, ...base.options[option.id], ...variant.options?.[option.id] })) }
-      if (question.optionGroups) resolved.optionGroups = question.optionGroups.map(group => ({ ...group, title: groupTitles[group.id] }))
       if (exemptionNotice && flags.sectionM?.showExemptionNotice) resolved.notice = exemptionNotice
       if (detectedNotice && flags.sectionC?.suggestedDpoIds.length) {
         resolved.suggestedIds = flags.sectionC.suggestedDpoIds

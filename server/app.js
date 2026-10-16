@@ -2,7 +2,7 @@ import express from 'express'
 import { createSessionStore } from './sessions.js'
 import { submitPage, goBack } from './questionnaireState.js'
 import { getCurrentPage } from './routing.js'
-import { getPage, previewPage } from './pages.js'
+import { getPage } from './pages.js'
 import { createAssessment } from './assessment/createAssessment.js'
 import { createAssessmentPdf } from './assessment/pdf.js'
 
@@ -54,16 +54,6 @@ export function createApp({ sessions = createSessionStore(), secureCookies = fal
     // Validation and state updates succeeded. Re-evaluate routing and return the
     // next translated page immediately, without a second browser request.
     res.json(getPage({ state, locale: req.body.locale }))
-  })
-  // A same-page preview resolves draft-dependent presentation without saving
-  // answers or moving forward. It follows the same session/current-page boundary.
-  app.post('/api/questionnaire/preview', (req, res) => {
-    const state = sessions.get(sessionId(req))
-    if (!state) return res.status(401).json({ error: 'sessionExpired' })
-    if (req.body?.pageId !== getCurrentPage(state)) return res.status(409).json({ error: 'wrongPage' })
-    const preview = previewPage({ state, pageId: req.body.pageId, answers: req.body.answers, locale: req.body.locale })
-    if (!preview) return res.status(400).json({ error: 'invalidAnswers' })
-    res.json(preview)
   })
   // Restart discards the previous state and issues a new session identifier.
   app.post('/api/questionnaire/restart', (req, res) => {

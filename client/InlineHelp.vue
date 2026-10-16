@@ -1,6 +1,6 @@
 <script setup>
 import { nextTick, onBeforeUnmount, onMounted, ref, useId, watch } from 'vue'
-import { getHelpPosition } from '../shared/inlineHelp.js'
+import { getHelpPosition } from './helpPosition.js'
 
 const props = defineProps({
   label: { type: String, required: true },

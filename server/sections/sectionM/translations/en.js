@@ -1,11 +1,11 @@
 export default {
   "pages": {
-    "section-m-ropa-content": {
+    "section-m-ropa-controller-content": {
       "title": "Section M - Records of Processing Activities",
       "questions": {
-        "section-m-ropa-content": {
-          "title": "Which information is included in your organisation’s record of processing activities (RoPA)?",
-          "prompt": "Select the information included in each checklist shown for your selected role or roles.",
+        "section-m-ropa-controller-content": {
+          "title": "Which information is included in your organisation’s record of processing activities (RoPA) as a controller?",
+          "prompt": "Select the information included in this record.",
           "explanation": "A RoPA describes how your organisation uses personal data. A spreadsheet can be sufficient; specialist software is not required. Describe activities such as payroll, recruitment or customer management, rather than listing individual people’s records.\n\nKeep the record in writing, including electronically, keep it current and make it available to the data protection authority on request. If you act as both controller and processor, answer both checklists for the corresponding records.",
           "references": [
             "GDPR Article 30(1): controller record contents and the conditions attached to particular fields",
@@ -15,10 +15,6 @@ export default {
             "EDPB-endorsed Article 30(5) position paper: assess the exemption by processing activity"
           ],
           "exemptionNotice": "Your earlier answers indicate that your organisation has fewer than 250 employees, processes personal data only occasionally, and does not process sensitive personal data (Article 9) or criminal-conviction and offence data (Article 10). If your processing is also unlikely to create a risk to people’s rights and freedoms, you may qualify for an exemption from keeping a RoPA. We still recommend creating one to help organise and demonstrate your data-protection practices.",
-          "groupTitles": {
-            "controller": "Your record as a controller",
-            "processor": "Your record as a processor"
-          },
           "options": {
             "ropa-controller-identities-contacts": {
               "label": "Who is responsible and how to contact them",
@@ -34,7 +30,7 @@ export default {
             },
             "ropa-controller-transfers": {
               "label": "International transfers, where applicable",
-              "description": "Identify transfers to countries outside the EU/EEA or international organisations, naming the destination. For transfers relying on the exceptional route based on compelling legitimate interests in the second subparagraph of Article 49(1), also document the suitable safeguards."
+              "description": "Identify transfers to countries outside the EU/EEA or international organisations, naming the destination. For transfers relying on the exceptional route based on compelling legitimate interests in the [[transfer-specific-exception|second subparagraph of Article 49(1)]], also document the suitable safeguards."
             },
             "ropa-controller-erasure-periods": {
               "label": "Expected deletion periods, where possible",
@@ -47,7 +43,27 @@ export default {
             "ropa-controller-none": {
               "label": "None of the above",
               "description": "Select this also if your organisation does not have a RoPA for its activities as a controller."
-            },
+            }
+          }
+        }
+      }
+    },
+    "section-m-ropa-processor-content": {
+      "title": "Section M - Records of Processing Activities",
+      "questions": {
+        "section-m-ropa-processor-content": {
+          "title": "Which information is included in your organisation’s record of processing activities (RoPA) as a processor?",
+          "prompt": "Select the information included in this record.",
+          "explanation": "A RoPA describes how your organisation uses personal data. A spreadsheet can be sufficient; specialist software is not required. Describe activities such as payroll, recruitment or customer management, rather than listing individual people’s records.\n\nKeep the record in writing, including electronically, keep it current and make it available to the data protection authority on request. If you act as both controller and processor, answer both checklists for the corresponding records.",
+          "references": [
+            "GDPR Article 30(1): controller record contents and the conditions attached to particular fields",
+            "GDPR Article 30(2): processor record contents and the conditions attached to particular fields",
+            "GDPR Article 30(3)-(4): written or electronic records available to the supervisory authority on request",
+            "GDPR Article 30(5): the under-250 exemption also depends on processing frequency, risks and data categories",
+            "EDPB-endorsed Article 30(5) position paper: assess the exemption by processing activity"
+          ],
+          "exemptionNotice": "Your earlier answers indicate that your organisation has fewer than 250 employees, processes personal data only occasionally, and does not process sensitive personal data (Article 9) or criminal-conviction and offence data (Article 10). If your processing is also unlikely to create a risk to people’s rights and freedoms, you may qualify for an exemption from keeping a RoPA. We still recommend creating one to help organise and demonstrate your data-protection practices.",
+          "options": {
             "ropa-processor-identities-contacts": {
               "label": "Your organisation and the controllers you work for",
               "description": "Names and contact details of the processor or processors and each controller they work for, plus, where applicable, the controller’s or processor’s representative and the DPO."
@@ -58,7 +74,7 @@ export default {
             },
             "ropa-processor-transfers": {
               "label": "International transfers, where applicable",
-              "description": "Identify transfers to countries outside the EU/EEA or international organisations, naming the destination. For transfers relying on the exceptional route based on compelling legitimate interests in the second subparagraph of Article 49(1), also document the suitable safeguards."
+              "description": "Identify transfers to countries outside the EU/EEA or international organisations, naming the destination. For transfers relying on the exceptional route based on compelling legitimate interests in the [[transfer-specific-exception|second subparagraph of Article 49(1)]], also document the suitable safeguards."
             },
             "ropa-processor-security-measures": {
               "label": "A general description of security measures, where possible",

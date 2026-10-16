@@ -51,7 +51,7 @@ export default {
         },
         "processor-role": {
           "label": "Processor",
-          "description": "Another organisation determines the purposes and essential means, and we process the data on its behalf.",
+          "description": "Another organisation determines the purposes and essential means, and we process the data [[provider-on-behalf|on its behalf]].",
           "quote": "'processor' means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller",
           "reference": "GDPR Article 4(8)"
         },
@@ -84,7 +84,7 @@ export default {
       "prompt": "Select every Article 3 connection that applies. Select the final answer only if none apply.",
       "options": {
         "eu-establishment": {
-          "label": "We are established in the EU/EEA",
+          "label": "We are established in the [[eu-eea|EU/EEA]]",
           "description": "Use this where the processing is connected to an EU/EEA office, branch, or stable arrangement, even if the actual processing happens elsewhere.",
           "quote": "in the context of the activities of an establishment of a controller or a processor in the Union",
           "reference": "GDPR Article 3(1)"

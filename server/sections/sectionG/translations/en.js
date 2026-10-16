@@ -69,11 +69,11 @@ export default {
             },
             "right-erasure": {
               "label": "Erasure",
-              "description": "The organisation can assess and act on erasure requests where Article 17 grounds apply."
+              "description": "The organisation can assess and act on erasure requests where [[article-17|Article 17]] grounds apply."
             },
             "right-restriction": {
               "label": "Restriction of processing",
-              "description": "The organisation can restrict processing where Article 18 conditions apply."
+              "description": "The organisation can restrict processing where [[article-18|Article 18]] conditions apply."
             },
             "right-recipient-notification": {
               "label": "Recipient notification",
@@ -81,7 +81,7 @@ export default {
             },
             "right-portability": {
               "label": "Data portability",
-              "description": "The organisation can provide portable data where Article 20 conditions apply."
+              "description": "The organisation can provide portable data where [[article-20|Article 20]] conditions apply."
             },
             "right-objection": {
               "label": "Objection",
@@ -89,7 +89,7 @@ export default {
             },
             "right-automated-decision": {
               "label": "Automated decision-making protections",
-              "description": "The organisation can handle Article 22 protections for fully automated decisions with legal or similarly significant effects."
+              "description": "The organisation can handle [[article-22|Article 22]] protections for fully automated decisions with legal or similarly significant effects."
             },
             "no-rights-supported": {
               "label": "None of the above",

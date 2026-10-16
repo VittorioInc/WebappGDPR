@@ -4,7 +4,7 @@ export default {
       "title": "Sezione K - Titolare: notifica e documentazione delle violazioni",
       "questions": {
         "section-k-breach-notification-records": {
-          "title": "Quali procedure ha la tua organizzazione per notificare e documentare le violazioni dei dati personali?",
+          "title": "Quali procedure ha la tua organizzazione per notificare e documentare le [[personal-data-breach|violazioni dei dati personali]]?",
           "prompt": "Per le attività svolte come titolare del trattamento, seleziona le procedure attualmente in atto, anche se la tua organizzazione non ha mai subito una violazione.",
           "references": [
             "GDPR articolo 33(1): notificare all’autorità senza ingiustificato ritardo e, ove possibile, entro 72 ore, salvo che il rischio per le persone sia improbabile; motivare eventuali ritardi",
@@ -33,7 +33,7 @@ export default {
       "title": "Sezione K - Titolare: persone coinvolte",
       "questions": {
         "section-k-data-subject-communication": {
-          "title": "La tua organizzazione ha una procedura per informare le persone coinvolte quando una violazione dei dati personali lo richiede?",
+          "title": "La tua organizzazione ha una procedura per informare le persone coinvolte quando una [[personal-data-breach|violazione dei dati personali]] lo richiede?",
           "prompt": "Per le attività svolte come titolare del trattamento, rispondi in base alle procedure attualmente in atto, anche se la tua organizzazione non ha mai subito una violazione.",
           "explanation": "Informa le persone coinvolte senza ingiustificato ritardo quando è probabile che la violazione comporti un rischio elevato per i loro diritti e le loro libertà. Per questa comunicazione non è previsto un termine fisso di 72 ore.\n\nDescrivi la violazione con un linguaggio chiaro, indica un punto di contatto e spiega le probabili conseguenze e le misure adottate o proposte. Includi consigli pratici che le persone possono seguire per proteggersi.\n\nLa comunicazione individuale può non essere necessaria se una protezione efficace rende i dati coinvolti illeggibili a persone non autorizzate, come la cifratura con chiavi non compromesse, oppure se misure successive assicurano che il rischio elevato non sia più suscettibile di concretizzarsi.\n\nSe contattare individualmente tutte le persone comportasse uno sforzo sproporzionato, è comunque necessaria una comunicazione pubblica o una misura simile altrettanto efficace.",
           "references": [
@@ -59,7 +59,7 @@ export default {
       "title": "Sezione K - Responsabile: notifica e assistenza ai clienti",
       "questions": {
         "section-k-processor-breach-reporting": {
-          "title": "La tua organizzazione ha una procedura per notificare tempestivamente le violazioni ai propri clienti e assisterli quando sono coinvolti dati trattati per loro conto?",
+          "title": "La tua organizzazione ha una procedura per notificare tempestivamente le [[personal-data-breach|violazioni]] ai propri clienti e assisterli quando sono coinvolti dati trattati per loro conto?",
           "prompt": "Per le attività svolte come responsabile del trattamento, rispondi in base alle procedure attualmente in atto, anche se la tua organizzazione non ha mai subito una violazione.",
           "explanation": "Notifica la violazione al cliente interessato, che agisce come titolare del trattamento, senza ingiustificato ritardo dopo esserne venuto a conoscenza. Non attendere un’indagine completa o la conclusione che la violazione comporti un rischio significativo. Fornisci tempestivamente le informazioni disponibili, integra quanto comunicato quando emergono nuovi elementi e assisti il cliente nella valutazione e nella risposta.",
           "references": [

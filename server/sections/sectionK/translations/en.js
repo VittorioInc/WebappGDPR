@@ -4,7 +4,7 @@ export default {
       "title": "Section K - Controller: Breach Notification and Records",
       "questions": {
         "section-k-breach-notification-records": {
-          "title": "Which arrangements has your organisation put in place for reporting and recording personal data breaches?",
+          "title": "Which arrangements has your organisation put in place for reporting and recording [[personal-data-breach|personal data breaches]]?",
           "prompt": "For your activities as a controller, select the arrangements currently in place, even if your organisation has never experienced a breach.",
           "references": [
             "GDPR Article 33(1): notify the authority without undue delay and, where feasible, within 72 hours unless risk to people is unlikely; explain any delay",
@@ -33,7 +33,7 @@ export default {
       "title": "Section K - Controller: Affected Individuals",
       "questions": {
         "section-k-data-subject-communication": {
-          "title": "Does your organisation have a process for informing affected people when a personal data breach requires it?",
+          "title": "Does your organisation have a process for informing affected people when a [[personal-data-breach|personal data breach]] requires it?",
           "prompt": "For your activities as a controller, answer based on the arrangements currently in place, even if your organisation has never experienced a breach.",
           "explanation": "Inform affected people without undue delay when the breach is likely to create a high risk to their rights and freedoms. There is no fixed 72-hour deadline for this communication.\n\nDescribe the breach in clear language, provide a contact point, explain likely consequences and the measures taken or proposed. Include practical advice people can follow to protect themselves.\n\nIndividual communication may be unnecessary where effective protection makes the affected data unreadable to unauthorised people, such as encryption with uncompromised keys, or subsequent measures ensure that the high risk is no longer likely to materialise.\n\nIf contacting everyone individually would involve disproportionate effort, an equally effective public communication or similar measure is still required.",
           "references": [
@@ -59,7 +59,7 @@ export default {
       "title": "Section K - Processor: Client Notification and Assistance",
       "questions": {
         "section-k-processor-breach-reporting": {
-          "title": "Does your organisation have a process for promptly notifying and assisting its clients when a personal data breach affects data processed on their behalf?",
+          "title": "Does your organisation have a process for promptly notifying and assisting its clients when a [[personal-data-breach|personal data breach]] affects data processed on their behalf?",
           "prompt": "For your activities as a processor, answer based on the arrangements currently in place, even if your organisation has never experienced a breach.",
           "explanation": "Notify the relevant client, acting as controller, without undue delay after becoming aware of a breach. Do not wait for a complete investigation or for a conclusion that the breach poses a significant risk. Provide available information promptly, follow up as more becomes known, and assist the client with its assessment and response.",
           "references": [

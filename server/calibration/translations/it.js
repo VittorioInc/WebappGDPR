@@ -51,7 +51,7 @@ export default {
         },
         "processor-role": {
           "label": "Responsabile del trattamento",
-          "description": "Un'altra organizzazione determina le finalità e i mezzi essenziali e noi trattiamo i dati per suo conto.",
+          "description": "Un'altra organizzazione determina le finalità e i mezzi essenziali e noi trattiamo i dati [[provider-on-behalf|per suo conto]].",
           "quote": "'responsabile del trattamento': la persona fisica o giuridica, l'autorità pubblica, il servizio o altro organismo che tratta dati personali per conto del titolare del trattamento",
           "reference": "GDPR articolo 4(8)"
         },
@@ -84,7 +84,7 @@ export default {
       "prompt": "Seleziona ogni collegamento dell articolo 3 applicabile. Seleziona l ultima risposta solo se nessuno si applica.",
       "options": {
         "eu-establishment": {
-          "label": "Siamo stabiliti nell UE/SEE",
+          "label": "Siamo stabiliti nell [[eu-eea|UE/SEE]]",
           "description": "Usa questa opzione quando il trattamento e collegato a un ufficio, filiale o stabile organizzazione nell UE/SEE, anche se il trattamento avviene altrove.",
           "quote": "nel contesto delle attivita di uno stabilimento di un titolare del trattamento o di un responsabile del trattamento nell Unione",
           "reference": "GDPR articolo 3(1)"

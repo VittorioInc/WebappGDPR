@@ -6,38 +6,71 @@ import en from '../shared/translations/en.js'
 import it from '../shared/translations/it.js'
 
 const response = ref(null)
+const answers = ref({}) // Only the displayed page's unsubmitted selections.
 const locale = ref('') // The server supplies the default language.
 const busy = ref(false)
 const error = ref('')
-const generation = ref(0)
-const pageComponent = ref(null)
-const retryOptions = ref({})
 const text = computed(() => response.value?.text)
 const errorText = computed(() => text.value?.errors[error.value] ?? (text.value ? text.value.errors.connection : `${en.errors.connection} / ${it.errors.connection}`))
-async function load(options = {}) {
+// Navigation starts a fresh draft. Translation preserves edits on the same page.
+function showPage(result, draft = {}) {
+  answers.value = Object.fromEntries((result.page.questions ?? []).map(question => [
+    question.id, [...(draft[question.id] ?? question.suggestedIds ?? [])],
+  ]))
+  response.value = result
+  locale.value = result.locale
+  document.documentElement.lang = result.locale
+  document.title = result.text.appTitle
+}
+
+async function runRequest(action) {
   if (busy.value) return
-  // Translate a conditional page using its current draft, without committing it.
-  if (options.locale && response.value?.page.previewSupported && !options.answers) {
-    options = { ...options, preview: true, pageId: response.value.page.id, answers: pageComponent.value.getDraft() }
-  }
-  retryOptions.value = options
   busy.value = true
   error.value = ''
   try {
-    response.value = await requestPage({ locale: locale.value, ...options })
-    locale.value = response.value.locale
-    document.documentElement.lang = locale.value
-    document.title = response.value.text.appTitle
-    if (options.restart) generation.value++
-    retryOptions.value = {}
+    await action()
   } catch (failure) { error.value = failure.message }
   finally { busy.value = false }
 }
-async function download() {
+
+function loadCurrentPage() {
+  return runRequest(async () => showPage(await requestPage(`current?locale=${encodeURIComponent(locale.value)}`)))
+}
+
+function submit() {
+  return runRequest(async () => showPage(await requestPage('answers', {
+    locale: locale.value, pageId: response.value.page.id, answers: answers.value,
+  })))
+}
+
+function back() {
+  return runRequest(async () => showPage(await requestPage('back', {
+    locale: locale.value, pageId: response.value.page.id,
+  })))
+}
+
+function restart() {
+  return runRequest(async () => showPage(await requestPage('restart', { locale: locale.value })))
+}
+
+function updateAnswer(questionId, ids) {
   if (busy.value) return
-  busy.value = true
-  error.value = ''
-  try {
+  answers.value[questionId] = ids
+}
+
+async function changeLanguage(event) {
+  const nextLocale = event.target.value
+  await runRequest(async () => {
+    const page = response.value.page
+    const result = await requestPage(`current?locale=${encodeURIComponent(nextLocale)}`)
+    showPage(result, result.page.id === page.id ? answers.value : {})
+  })
+  // A failed request must leave the selector in the displayed page's language.
+  event.target.value = locale.value
+}
+
+function download() {
+  return runRequest(async () => {
     const { blob, fileName } = await requestPdf({ locale: locale.value })
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
@@ -47,10 +80,9 @@ async function download() {
     link.click()
     link.remove()
     setTimeout(() => URL.revokeObjectURL(url), 1000)
-  } catch (failure) { error.value = failure.message }
-  finally { busy.value = false }
+  })
 }
-onMounted(() => load())
+onMounted(loadCurrentPage)
 </script>
 
 <template>
@@ -58,17 +90,16 @@ onMounted(() => load())
     <header v-if="response">
       <strong>{{ text.appTitle }}</strong>
       <label>{{ text.language }}
-        <select :value="locale" :disabled="busy" @change="load({ locale: $event.target.value })">
+        <select :value="locale" :disabled="busy" @change="changeLanguage">
           <option v-for="code in response.supportedLocales" :key="code" :value="code">{{ text.languages[code] }}</option>
         </select>
       </label>
     </header>
     <div v-if="error" role="alert" class="error">
       <p>{{ errorText }}</p>
-      <button :disabled="busy" @click="load(retryOptions)">{{ text?.retry ?? `${en.retry} / ${it.retry}` }}</button>
+      <button v-if="!response" :disabled="busy" @click="loadCurrentPage">{{ en.retry }} / {{ it.retry }}</button>
     </div>
-    <!-- A different page resets its draft. Language changes keep the same key. -->
-    <Page v-if="response" ref="pageComponent" :key="`${response.page.id}:${generation}`" :page="response.page" :text="text" :busy="busy"
-      @submit="load($event)" @preview="load({ ...$event, preview: true })" @restart="load({ restart: true })" @back="load({ ...$event, back: true })" @download="download" />
+    <Page v-if="response" :page="response.page" :answers="answers" :text="text" :busy="busy"
+      @answer="updateAnswer" @submit="submit" @restart="restart" @back="back" @download="download" />
   </main>
 </template>

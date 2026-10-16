@@ -21,7 +21,7 @@ import { createSectionAssessment as createSectionFAssessment } from '../sections
 import { getPageContent } from '../pageRegistry.js'
 import { getCurrentPage } from '../routing.js'
 import { resolveLocale } from '../config.js'
-import { isQuestionVisible } from '../questionVisibility.js'
+import { plainHelpText } from '../help/resolveText.js'
 import sectionGEn from '../sections/sectionG/translations/en.js'
 import sectionGIt from '../sections/sectionG/translations/it.js'
 import { createSectionAssessment as createSectionGAssessment } from '../sections/sectionG/assessment.js'
@@ -88,12 +88,9 @@ export function createAssessment({ state, locale }) {
   // Localise accepted IDs only. The client cannot supply PDF prose or references.
   const answered = Object.entries(state.answers).filter(([id]) => id !== 'calibration').flatMap(([pageId, selections]) => {
     const page = getPageContent({ pageId, locale, flags: state.flags })
-    return page.questions.filter(question => isQuestionVisible(question, selections)).flatMap(question => {
+    return page.questions.map(question => {
       const selected = question.options.filter(option => selections[question.id]?.includes(option.id))
-      return question.optionGroups ? question.optionGroups.map(group => ({
-        question: { ...question, title: `${question.title} (${group.title})` },
-        selected: selected.filter(option => group.optionIds.includes(option.id))
-      })) : [{ question, selected }]
+      return { question, selected }
     })
   })
   const references = [...new Set(answered.flatMap(({ question }) => question.references ?? []))]
@@ -105,9 +102,9 @@ export function createAssessment({ state, locale }) {
   const appendix = [heading(notice.title), paragraph(notice.intro), ...notice.items.flatMap(item => [
     { type: 'heading', level: 4, text: item.title }, paragraph(item.body), { type: 'quote', text: item.quote, reference: item.reference }
   ]), paragraph(notice.closing), heading(copy.pdf.answers), ...answered.flatMap(({ question, selected }, index) => [
-    { type: 'heading', level: 4, text: `${index + 1}. ${question.title}` },
-    { type: 'paragraph', lead: selected.map(option => option.label).join(', '), text: selected.length > 1
-      ? copy.multipleSelected.replace('{count}', selected.length) : selected[0]?.description ?? '' }
+    { type: 'heading', level: 4, text: `${index + 1}. ${plainHelpText(question.title)}` },
+    { type: 'paragraph', lead: selected.map(option => plainHelpText(option.label)).join(', '), text: selected.length > 1
+      ? copy.multipleSelected.replace('{count}', selected.length) : plainHelpText(selected[0]?.description ?? '') }
   ])]
   return {
     screen: { title: copy.title, blocks: [...main, ...supplementary, ...ending] },

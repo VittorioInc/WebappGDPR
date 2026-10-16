@@ -4,7 +4,7 @@ export default {
       "title": "Section I - International Transfers",
       "questions": {
         "section-i-transfer-situations": {
-          "title": "Does your organisation send personal data to, or make it accessible to, recipients outside the EU/EEA or international organisations?",
+          "title": "Does your organisation send personal data to, or [[transfer-access|make it accessible]] to, recipients outside the [[eu-eea|EU/EEA]] or [[international-organisation|international organisations]]?",
           "prompt": "Consider suppliers, business partners and group companies, including cloud storage, backups and remote support. Data can be accessible to an overseas recipient even when the servers are located in the EU/EEA.",
           "references": [
             "GDPR Article 4(26): definition of an international organisation",
@@ -27,8 +27,8 @@ export default {
       "title": "Section I - Transfer Mechanism",
       "questions": {
         "section-i-transfer-mechanism": {
-          "title": "Does an adequacy decision cover every international transfer your organisation makes, directly or through its providers?",
-          "prompt": "Check that the relevant decisions cover each destination, recipient and type of data. Select No if only some transfers are covered; you can then identify the mechanisms used for the remaining transfers below.",
+          "title": "Does an [[transfer-adequacy|adequacy decision]] cover every international transfer your organisation makes, directly or through its providers?",
+          "prompt": "Check that the relevant decisions cover each destination, recipient and type of data. Select No if only some transfers are covered; you can identify the mechanisms used for the remaining transfers in the next question.",
           "references": [
             "GDPR Article 45(1): transfer on the basis of an adequacy decision",
             "GDPR Article 46(1): appropriate safeguards and enforceable data subject rights",
@@ -47,25 +47,30 @@ export default {
               "description": "At least one transfer is not covered by an adequacy decision."
             }
           }
-        },
+        }
+      }
+    },
+    "section-i-transfer-mechanism-alternatives": {
+      "title": "Section I - Transfer Mechanism",
+      "questions": {
         "section-i-transfer-mechanism-alternatives": {
           "title": "For transfers not covered by an adequacy decision, what does your organisation rely on?",
-          "prompt": "Select all mechanisms used for those transfers. The first four options are safeguards under Article 46; the Article 49 option is an exception with specific conditions. Selecting a mechanism does not confirm that all its conditions are met.",
+          "prompt": "Select all mechanisms used for those transfers. The first four options are safeguards under Article 46; the [[transfer-specific-exception|Article 49]] option is an exception with specific conditions. Selecting a mechanism does not confirm that all its conditions are met.",
           "options": {
             "standard-data-protection-clauses": {
-              "label": "Standard contractual clauses or other authorised contractual clauses",
+              "label": "[[transfer-contractual-clauses|Standard contractual clauses or other authorised contractual clauses]]",
               "description": "The parties use contractual terms that provide the required protection for the transfer."
             },
             "binding-corporate-rules": {
-              "label": "Approved binding corporate rules for transfers within a group",
+              "label": "[[transfer-bcr|Approved binding corporate rules]] for transfers within a group",
               "description": "The group’s approved rules cover the entities and transfers concerned."
             },
             "approved-code-or-certification": {
-              "label": "Approved code of conduct or certification with binding commitments",
+              "label": "[[transfer-code-certification|Approved code of conduct or certification]] with binding commitments",
               "description": "The approved framework covers the transfer, and the recipient makes binding and enforceable commitments to protect the data."
             },
             "public-authority-instrument": {
-              "label": "Binding instrument or authorised arrangement between public authorities",
+              "label": "[[transfer-public-authorities|Binding instrument or authorised arrangement between public authorities]]",
               "description": "The public bodies use a legally binding instrument or an authorised administrative arrangement that provides enforceable protection for the people concerned."
             },
             "article-49-derogation": {

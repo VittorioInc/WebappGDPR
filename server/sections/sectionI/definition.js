@@ -30,15 +30,15 @@ export default {
             "id": "adequacy-not-all"
           }
         ]
-      },
+      }
+    ]
+  },
+  "section-i-transfer-mechanism-alternatives": {
+    "questions": [
       {
         "id": "section-i-transfer-mechanism-alternatives",
         "type": "multi-select",
         "required": true,
-        "showWhen": {
-          "questionId": "section-i-transfer-mechanism",
-          "optionId": "adequacy-not-all"
-        },
         "options": [
           {
             "id": "standard-data-protection-clauses"

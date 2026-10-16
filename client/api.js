@@ -1,13 +1,12 @@
-export async function requestPage({ locale, pageId, answers, restart = false, back = false, preview = false }) {
-  const submit = answers !== undefined
-  const url = restart ? '/api/questionnaire/restart' : back ? '/api/questionnaire/back' : preview ? '/api/questionnaire/preview' : submit ? '/api/questionnaire/answers' : `/api/questionnaire/current?locale=${encodeURIComponent(locale)}`
-  const response = await fetch(url, {
-    credentials: 'same-origin',
-    ...(submit || restart || back ? {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ locale, ...(submit || back ? { pageId } : {}), ...(submit ? { answers } : {}) })
-    } : {})
-  })
+// Reading the current page uses GET; actions send their explicit payload by POST.
+export async function requestPage(path, body) {
+  const options = { credentials: 'same-origin' }
+  if (body !== undefined) {
+    options.method = 'POST'
+    options.headers = { 'Content-Type': 'application/json' }
+    options.body = JSON.stringify(body)
+  }
+  const response = await fetch(`/api/questionnaire/${path}`, options)
   const result = await response.json()
   if (!response.ok) throw new Error(result.error || 'serverError')
   return result

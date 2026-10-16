@@ -1,34 +1,10 @@
 export default {
-  "section-m-ropa-content": {
+  "section-m-ropa-controller-content": {
     "questions": [
       {
-        "id": "section-m-ropa-content",
+        "id": "section-m-ropa-controller-content",
         "type": "multi-select",
         "required": true,
-        "optionGroups": [
-          {
-            "id": "controller",
-            "optionIds": [
-              "ropa-controller-identities-contacts",
-              "ropa-controller-purposes-data-categories",
-              "ropa-controller-recipients",
-              "ropa-controller-transfers",
-              "ropa-controller-erasure-periods",
-              "ropa-controller-security-measures",
-              "ropa-controller-none"
-            ]
-          },
-          {
-            "id": "processor",
-            "optionIds": [
-              "ropa-processor-identities-contacts",
-              "ropa-processor-processing-categories",
-              "ropa-processor-transfers",
-              "ropa-processor-security-measures",
-              "ropa-processor-none"
-            ]
-          }
-        ],
         "options": [
           {
             "id": "ropa-controller-identities-contacts"
@@ -51,7 +27,18 @@ export default {
           {
             "id": "ropa-controller-none",
             "exclusive": true
-          },
+          }
+        ]
+      }
+    ]
+  },
+  "section-m-ropa-processor-content": {
+    "questions": [
+      {
+        "id": "section-m-ropa-processor-content",
+        "type": "multi-select",
+        "required": true,
+        "options": [
           {
             "id": "ropa-processor-identities-contacts"
           },

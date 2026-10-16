@@ -68,7 +68,7 @@ export default {
             },
             "withdrawal-response-ready": {
               "label": "La revoca viene registrata e il trattamento interessato viene aggiornato tempestivamente",
-              "description": "Il trattamento basato sul consenso viene interrotto, lo stato del consenso viene aggiornato e si valuta la cancellazione quando si applica l articolo 17(1)(b)."
+              "description": "Il trattamento basato sul consenso viene interrotto, lo stato del consenso viene aggiornato e si valuta la cancellazione quando si applica l [[article-17|articolo 17]](1)(b)."
             },
             "no-consent-withdrawal": {
               "label": "Nessuna di queste affermazioni descrive il processo di revoca attuale",

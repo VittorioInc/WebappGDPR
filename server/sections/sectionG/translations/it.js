@@ -69,11 +69,11 @@ export default {
             },
             "right-erasure": {
               "label": "Cancellazione",
-              "description": "L organizzazione può valutare e gestire richieste di cancellazione quando si applicano i presupposti dell articolo 17."
+              "description": "L organizzazione può valutare e gestire richieste di cancellazione quando si applicano i presupposti dell [[article-17|articolo 17]]."
             },
             "right-restriction": {
               "label": "Limitazione del trattamento",
-              "description": "L organizzazione può limitare il trattamento quando si applicano le condizioni dell articolo 18."
+              "description": "L organizzazione può limitare il trattamento quando si applicano le condizioni dell [[article-18|articolo 18]]."
             },
             "right-recipient-notification": {
               "label": "Notifica ai destinatari",
@@ -81,7 +81,7 @@ export default {
             },
             "right-portability": {
               "label": "Portabilità dei dati",
-              "description": "L organizzazione può fornire dati portabili quando si applicano le condizioni dell articolo 20."
+              "description": "L organizzazione può fornire dati portabili quando si applicano le condizioni dell [[article-20|articolo 20]]."
             },
             "right-objection": {
               "label": "Opposizione",
@@ -89,7 +89,7 @@ export default {
             },
             "right-automated-decision": {
               "label": "Tutele per decisioni automatizzate",
-              "description": "L’organizzazione può gestire le tutele dell’articolo 22 per decisioni interamente automatizzate con effetti giuridici o altrettanto significativi."
+              "description": "L’organizzazione può gestire le tutele dell’[[article-22|articolo 22]] per decisioni interamente automatizzate con effetti giuridici o altrettanto significativi."
             },
             "no-rights-supported": {
               "label": "Nessuna delle precedenti",

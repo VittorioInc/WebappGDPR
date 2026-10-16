@@ -125,7 +125,7 @@ export default {
             },
             "transfers-safeguards-notice": {
               "label": "International transfers and safeguards where applicable",
-              "description": "The notice covers transfers to third countries or international organisations."
+              "description": "The notice covers transfers to third countries or [[international-organisation|international organisations]]."
             },
             "retention-notice": {
               "label": "Retention period or criteria",

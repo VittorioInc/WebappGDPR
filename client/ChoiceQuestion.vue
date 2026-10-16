@@ -1,10 +1,9 @@
 <script setup>
 import { computed } from 'vue'
 import HelpText from './HelpText.vue'
-import { choiceGroups, toggleChoice } from '../shared/choices.js'
-const props = defineProps({ question: Object, text: Object, busy: Boolean, helpEntries: Array, modelValue: { type: Array, default: () => [] } })
+import { toggleChoice } from '../shared/choices.js'
+const props = defineProps({ question: Object, text: Object, busy: Boolean, modelValue: { type: Array, default: () => [] } })
 const emit = defineEmits(['update:modelValue'])
-const groups = computed(() => choiceGroups(props.question))
 const normalIds = computed(() => props.question.options.filter(option => !option.exclusive).map(option => option.id))
 const allSelected = computed(() => normalIds.value.every(id => props.modelValue.includes(id)))
 function selectAll() { emit('update:modelValue', allSelected.value ? [] : [...normalIds.value]) }
@@ -19,11 +18,11 @@ function select(option) {
 
 <template>
   <fieldset :disabled="busy" class="question" :aria-labelledby="`${question.id}-title`">
-    <h2 :id="`${question.id}-title`"><HelpText :text="question.title" :entries="helpEntries" /></h2>
-    <p v-if="question.prompt"><HelpText :text="question.prompt" :entries="helpEntries" /></p>
+    <h2 :id="`${question.id}-title`"><HelpText :parts="question.title" /></h2>
+    <p v-if="question.prompt"><HelpText :parts="question.prompt" /></p>
     <p v-if="question.notice" class="question-explanation">{{ question.notice }}</p>
     <div v-if="question.explanation" class="question-explanation">
-      <p v-for="(paragraph, index) in question.explanation.split('\n\n')" :key="index"><HelpText :text="paragraph" :entries="helpEntries" /></p>
+      <p v-for="(paragraph, index) in question.explanation" :key="index"><HelpText :parts="paragraph" /></p>
       <div v-for="link in question.explanationLinks" :key="link.href"><a :href="link.href" target="_blank" rel="noopener noreferrer">{{ link.label }}</a></div>
     </div>
     <div v-if="question.detectedNotice" class="detected-notice">
@@ -40,22 +39,19 @@ function select(option) {
     <div v-if="question.allowSelectAll" class="question-tools"><button type="button" class="secondary" @click="selectAll">
       {{ allSelected ? question.clearAllLabel ?? text.clearAll : question.selectAllLabel ?? text.selectAll }}
     </button></div>
-    <div v-for="group in groups" :key="group.id" :role="group.title ? 'group' : undefined" :aria-labelledby="group.title ? `${question.id}-${group.id}-title` : undefined">
-    <h3 v-if="group.title" :id="`${question.id}-${group.id}-title`">{{ group.title }}</h3>
-    <div v-for="option in question.options.filter(option => group.optionIds.includes(option.id))" :key="option.id">
+    <div v-for="option in question.options" :key="option.id">
       <div class="choice" :class="{ selected: modelValue.includes(option.id), exclusive: option.exclusive }" @click="selectRow($event, option)">
         <input :id="`${question.id}-${option.id}`" :type="question.type === 'single-select' ? 'radio' : 'checkbox'"
           :name="question.id" :value="option.id" :checked="modelValue.includes(option.id)"
           :aria-describedby="option.description ? `${question.id}-${option.id}-description` : undefined" @change="select(option)">
-        <div class="choice-copy"><label :for="`${question.id}-${option.id}`"><strong><HelpText :text="option.label" :entries="helpEntries" /></strong></label>
+        <div class="choice-copy"><label :for="`${question.id}-${option.id}`"><strong><HelpText :parts="option.label" /></strong></label>
           <div v-if="option.description" :id="`${question.id}-${option.id}-description`" class="description">
-            <p v-for="(paragraph, index) in option.description.split('\n\n')" :key="index"><HelpText :text="paragraph" :entries="helpEntries" /></p>
+            <p v-for="(paragraph, index) in option.description" :key="index"><HelpText :parts="paragraph" /></p>
           </div>
           <a v-for="link in option.descriptionLinks" :key="link.href" :href="link.href" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
           <blockquote v-if="option.quote" class="reference"><q>{{ option.quote }}</q><cite>{{ option.reference }}</cite></blockquote>
         </div>
       </div>
-    </div>
     </div>
   </fieldset>
 </template>

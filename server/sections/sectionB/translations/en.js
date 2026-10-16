@@ -55,7 +55,7 @@ export default {
       "questions": {
         "section-b-article-9-condition": {
           "title": "Which GDPR Article 9(2) condition allows you to process that special-category data?",
-          "prompt": "Processing this data lawfully requires at least one applicable Article 9(2) condition for each purpose, in addition to a lawful basis under Article 6. Different purposes may rely on different conditions. Select every condition that applies.",
+          "prompt": "Processing this data lawfully requires at least one applicable Article 9(2) condition for each purpose, in addition to a lawful basis under [[article-6|Article 6]]. Different purposes may rely on different conditions. Select every condition that applies.",
           "references": [
             "GDPR Article 9(2): exceptions for special-category processing"
           ],
@@ -111,7 +111,7 @@ export default {
           },
           "variants": {
             "both": {
-              "prompt": "For this question, consider only activities where your organisation acts as controller. If the special-category data is handled solely on behalf of clients, select the corresponding option below. Processing this data lawfully requires at least one applicable Article 9(2) condition for each purpose, in addition to a lawful basis under Article 6. Different purposes may rely on different conditions. Select every condition that applies."
+              "prompt": "For this question, consider only activities where your organisation acts as controller. If the special-category data is handled solely on behalf of clients, select the corresponding option below. Processing this data lawfully requires at least one applicable Article 9(2) condition for each purpose, in addition to a lawful basis under [[article-6|Article 6]]. Different purposes may rely on different conditions. Select every condition that applies."
             }
           }
         }
@@ -122,7 +122,7 @@ export default {
       "questions": {
         "section-b-article-10-data": {
           "title": "Does your organisation process personal data relating to criminal convictions, offences, or related security measures?",
-          "prompt": "To process this data lawfully, you must meet at least one of the two conditions below, in addition to having a lawful basis under Article 6. Select every condition that applies, or indicate that you do not process this data.",
+          "prompt": "To process this data lawfully, you must meet at least one of the two conditions below, in addition to having a lawful basis under [[article-6|Article 6]]. Select every condition that applies, or indicate that you do not process this data.",
           "references": [
             "GDPR Article 10: criminal convictions, offences, and related security measures"
           ],
@@ -155,7 +155,7 @@ export default {
               }
             },
             "both": {
-              "prompt": "For the legal conditions below, consider only activities where your organisation acts as controller. If these data are handled solely on behalf of clients, select the corresponding option. To process this data lawfully, you must meet at least one of the two conditions below, in addition to having a lawful basis under Article 6. Select every condition that applies, or indicate that you do not process this data.",
+              "prompt": "For the legal conditions below, consider only activities where your organisation acts as controller. If these data are handled solely on behalf of clients, select the corresponding option. To process this data lawfully, you must meet at least one of the two conditions below, in addition to having a lawful basis under [[article-6|Article 6]]. Select every condition that applies, or indicate that you do not process this data.",
               "options": {
                 "article-10-processor-data": {
                   "label": "These data are handled only on behalf of clients",

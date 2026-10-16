@@ -125,7 +125,7 @@ export default {
             },
             "transfers-safeguards-notice": {
               "label": "Trasferimenti internazionali e garanzie, se applicabili",
-              "description": "L informativa copre trasferimenti verso paesi terzi o organizzazioni internazionali."
+              "description": "L informativa copre trasferimenti verso paesi terzi o [[international-organisation|organizzazioni internazionali]]."
             },
             "retention-notice": {
               "label": "Periodo di conservazione o criteri",

@@ -4,7 +4,7 @@ export default {
       "title": "Section H - Service Providers",
       "questions": {
         "section-h-service-provider-use": {
-          "title": "Does your organisation use other companies or service providers to handle personal data on its behalf?",
+          "title": "Does your organisation use other companies or service providers to handle personal data [[provider-on-behalf|on its behalf?]]",
           "prompt": "Include separate group companies and providers handling your clients’ data for you.",
           "references": [
             "GDPR Article 4(8): a processor handles personal data on behalf of a controller",
@@ -28,7 +28,7 @@ export default {
       "questions": {
         "section-h-provider-checks": {
           "title": "Do you check that each of these providers can protect personal data and meet its GDPR obligations?",
-          "prompt": "Provider checks should cover every provider you use.",
+          "prompt": "[[provider-checks|Provider checks]] should cover every provider you use.",
           "references": [
             "GDPR Article 28(1), (4): sufficient guarantees for data protection and compliance"
           ],
@@ -49,7 +49,7 @@ export default {
       "title": "Section H - Provider Agreements",
       "questions": {
         "section-h-provider-agreements": {
-          "title": "Do you have a binding written data-processing agreement in place with every such provider?",
+          "title": "Do you have a binding written [[provider-agreement|data-processing agreement]] in place with every such provider?",
           "prompt": "Answer for agreements actually in place with every provider, including electronic agreements.",
           "references": [
             "GDPR Article 28(3)-(4), (9): binding processing terms in writing, including electronic form"

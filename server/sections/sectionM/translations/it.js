@@ -1,11 +1,11 @@
 export default {
   "pages": {
-    "section-m-ropa-content": {
+    "section-m-ropa-controller-content": {
       "title": "Sezione M - Registri delle attività di trattamento",
       "questions": {
-        "section-m-ropa-content": {
-          "title": "Quali informazioni sono incluse nel registro delle attività di trattamento (RoPA) dell’organizzazione?",
-          "prompt": "Seleziona le informazioni incluse in ciascuna lista mostrata per il ruolo o i ruoli selezionati.",
+        "section-m-ropa-controller-content": {
+          "title": "Quali informazioni sono incluse nel registro delle attività di trattamento (RoPA) dell’organizzazione come titolare del trattamento?",
+          "prompt": "Seleziona le informazioni incluse in questo registro.",
           "explanation": "Il RoPA descrive come l’organizzazione utilizza i dati personali. Può bastare un foglio di calcolo; non è necessario un software dedicato. Descrivi attività come paghe, selezione del personale o gestione dei clienti, invece di elencare i dati delle singole persone.\n\nConserva il registro in forma scritta, anche elettronica, mantienilo aggiornato e rendilo disponibile all’autorità di controllo su richiesta. Se operi sia come titolare sia come responsabile, rispondi a entrambe le liste per i rispettivi registri.",
           "references": [
             "GDPR articolo 30(1): contenuti del registro del titolare e condizioni previste per specifiche voci",
@@ -15,10 +15,6 @@ export default {
             "Documento sull’articolo 30(5) approvato dall’EDPB: valutare l’esenzione per attività di trattamento"
           ],
           "exemptionNotice": "Le risposte precedenti indicano che l’organizzazione ha meno di 250 dipendenti, tratta dati personali solo occasionalmente e non tratta categorie particolari di dati personali (articolo 9) né dati relativi a condanne penali e reati (articolo 10). Se inoltre è improbabile che il trattamento comporti un rischio per i diritti e le libertà delle persone, potresti beneficiare di un’esenzione dalla tenuta del RoPA. Raccomandiamo comunque di crearlo per organizzare e dimostrare le pratiche di protezione dei dati.",
-          "groupTitles": {
-            "controller": "Il registro come titolare del trattamento",
-            "processor": "Il registro come responsabile del trattamento"
-          },
           "options": {
             "ropa-controller-identities-contacts": {
               "label": "Chi è responsabile e come contattarlo",
@@ -34,7 +30,7 @@ export default {
             },
             "ropa-controller-transfers": {
               "label": "Trasferimenti internazionali, ove applicabile",
-              "description": "Individua i trasferimenti verso paesi fuori dall’UE/SEE o organizzazioni internazionali, indicandone la destinazione. Per i trasferimenti basati sulla deroga eccezionale dei legittimi interessi cogenti prevista dall’articolo 49(1), secondo comma, documenta anche le garanzie adeguate."
+              "description": "Individua i trasferimenti verso paesi fuori dall’UE/SEE o organizzazioni internazionali, indicandone la destinazione. Per i trasferimenti basati sulla deroga eccezionale dei legittimi interessi cogenti prevista dall’[[transfer-specific-exception|articolo 49(1), secondo comma]], documenta anche le garanzie adeguate."
             },
             "ropa-controller-erasure-periods": {
               "label": "Termini previsti per la cancellazione, ove possibile",
@@ -47,7 +43,27 @@ export default {
             "ropa-controller-none": {
               "label": "Nessuna delle precedenti",
               "description": "Seleziona questa opzione anche se l’organizzazione non dispone di un registro per le attività svolte come titolare."
-            },
+            }
+          }
+        }
+      }
+    },
+    "section-m-ropa-processor-content": {
+      "title": "Sezione M - Registri delle attività di trattamento",
+      "questions": {
+        "section-m-ropa-processor-content": {
+          "title": "Quali informazioni sono incluse nel registro delle attività di trattamento (RoPA) dell’organizzazione come responsabile del trattamento?",
+          "prompt": "Seleziona le informazioni incluse in questo registro.",
+          "explanation": "Il RoPA descrive come l’organizzazione utilizza i dati personali. Può bastare un foglio di calcolo; non è necessario un software dedicato. Descrivi attività come paghe, selezione del personale o gestione dei clienti, invece di elencare i dati delle singole persone.\n\nConserva il registro in forma scritta, anche elettronica, mantienilo aggiornato e rendilo disponibile all’autorità di controllo su richiesta. Se operi sia come titolare sia come responsabile, rispondi a entrambe le liste per i rispettivi registri.",
+          "references": [
+            "GDPR articolo 30(1): contenuti del registro del titolare e condizioni previste per specifiche voci",
+            "GDPR articolo 30(2): contenuti del registro del responsabile e condizioni previste per specifiche voci",
+            "GDPR articolo 30(3)-(4): registri scritti o elettronici disponibili all’autorità di controllo su richiesta",
+            "GDPR articolo 30(5): l’esenzione per chi ha meno di 250 dipendenti dipende anche da frequenza, rischi e categorie di dati",
+            "Documento sull’articolo 30(5) approvato dall’EDPB: valutare l’esenzione per attività di trattamento"
+          ],
+          "exemptionNotice": "Le risposte precedenti indicano che l’organizzazione ha meno di 250 dipendenti, tratta dati personali solo occasionalmente e non tratta categorie particolari di dati personali (articolo 9) né dati relativi a condanne penali e reati (articolo 10). Se inoltre è improbabile che il trattamento comporti un rischio per i diritti e le libertà delle persone, potresti beneficiare di un’esenzione dalla tenuta del RoPA. Raccomandiamo comunque di crearlo per organizzare e dimostrare le pratiche di protezione dei dati.",
+          "options": {
             "ropa-processor-identities-contacts": {
               "label": "L’organizzazione e i titolari per cui opera",
               "description": "I nomi e i dati di contatto del responsabile o dei responsabili e di ciascun titolare per cui operano, nonché, ove applicabile, del rappresentante del titolare o del responsabile e del DPO."
@@ -58,7 +74,7 @@ export default {
             },
             "ropa-processor-transfers": {
               "label": "Trasferimenti internazionali, ove applicabile",
-              "description": "Individua i trasferimenti verso paesi fuori dall’UE/SEE o organizzazioni internazionali, indicandone la destinazione. Per i trasferimenti basati sulla deroga eccezionale dei legittimi interessi cogenti prevista dall’articolo 49(1), secondo comma, documenta anche le garanzie adeguate."
+              "description": "Individua i trasferimenti verso paesi fuori dall’UE/SEE o organizzazioni internazionali, indicandone la destinazione. Per i trasferimenti basati sulla deroga eccezionale dei legittimi interessi cogenti prevista dall’[[transfer-specific-exception|articolo 49(1), secondo comma]], documenta anche le garanzie adeguate."
             },
             "ropa-processor-security-measures": {
               "label": "Una descrizione generale delle misure di sicurezza, ove possibile",

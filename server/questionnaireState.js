@@ -8,7 +8,6 @@ import sectionGDefinitions from './sections/sectionG/definition.js'
 import sectionIDefinitions from './sections/sectionI/definition.js'
 import sectionJDefinitions from './sections/sectionJ/definition.js'
 import sectionKDefinitions from './sections/sectionK/definition.js'
-import { isQuestionVisible } from './questionVisibility.js'
 import { validChoices } from '../shared/choices.js'
 import sectionMDefinitions from './sections/sectionM/definition.js'
 
@@ -23,16 +22,11 @@ export function submitPage({ state, pageId, answers }) {
   if (!definition || getCurrentPage(state) !== pageId) return false
   if (!answers || typeof answers !== 'object' || Array.isArray(answers) ||
       Object.keys(answers).some(id => !definition.questions.some(question => question.id === id))) return false
-  const visibleQuestions = definition.questions.filter(question => isQuestionVisible(question, answers))
-  // Reject submitted hidden answers rather than letting stale alternatives
-  // influence flags or the PDF. The client clears them when their parent changes.
-  if (Object.keys(answers).some(id => !visibleQuestions.some(question => question.id === id))) return false
-  for (const question of visibleQuestions) {
+  for (const question of definition.questions) {
     const ids = answers[question.id]
     if (!validChoices(question, ids)) return false
   }
-  // Only accept answers for the current page, and only if they are valid for that page.
-  const accepted = Object.fromEntries(visibleQuestions.filter(question => answers[question.id] !== undefined)
+  const accepted = Object.fromEntries(definition.questions.filter(question => answers[question.id] !== undefined)
     .map(question => [question.id, [...answers[question.id]]]))
   // Commit only this page; earlier pages remain available for later decisions.
   const nextAnswers = { ...state.answers, [pageId]: accepted }
@@ -271,9 +265,10 @@ function deriveSectionIFlags(answers) {
   const hasReportedTransfers = screening === 'international-transfers-reported'
   const mechanism = hasReportedTransfers ? answers['section-i-transfer-mechanism'] : null
   const coverage = mechanism?.['section-i-transfer-mechanism']?.[0]
-  const alternatives = coverage === 'adequacy-not-all' ? mechanism?.['section-i-transfer-mechanism-alternatives'] : null
+  const alternatives = coverage === 'adequacy-not-all'
+    ? answers['section-i-transfer-mechanism-alternatives']?.['section-i-transfer-mechanism-alternatives'] : null
   const selectedMechanismIds = coverage === 'adequacy-decision' ? ['adequacy-decision']
-    : sectionIDefinitions['section-i-transfer-mechanism'].questions[1].options
+    : sectionIDefinitions['section-i-transfer-mechanism-alternatives'].questions[0].options
       .filter(option => !option.exclusive && alternatives?.includes(option.id)).map(option => option.id)
   return { hasReportedTransfers, noTransfersReported: screening === 'no-international-transfers',
     adequacyCoverageStatus: coverage === 'adequacy-decision' ? 'all-reported' : coverage === 'adequacy-not-all' ? 'not-all-reported' : null,
@@ -318,15 +313,22 @@ function deriveSectionLFlags(answers, flags) {
 }
 
 function deriveSectionMFlags(answers, flags) {
-  const ids = answers['section-m-ropa-content']?.['section-m-ropa-content']
-  const definition = sectionMDefinitions['section-m-ropa-content'].questions[0]
-  const missing = role => ids ? definition.optionGroups.find(group => group.id === role).optionIds
-    .filter(id => !id.endsWith('-none') && !ids.includes(id)) : []
+  const selection = role => {
+    const id = `section-m-ropa-${role}-content`
+    return answers[id]?.[id]
+  }
+  const missing = role => {
+    const ids = selection(role)
+    const question = sectionMDefinitions[`section-m-ropa-${role}-content`].questions[0]
+    return ids ? question.options.filter(option => !option.exclusive && !ids.includes(option.id)).map(option => option.id) : []
+  }
   const controllerMissingIds = flags.actsAsController ? missing('controller') : []
   const processorMissingIds = flags.actsAsProcessor ? missing('processor') : []
+  const answered = (flags.actsAsController || flags.actsAsProcessor) &&
+    (!flags.actsAsController || selection('controller')) && (!flags.actsAsProcessor || selection('processor'))
   return { controllerMissingIds, processorMissingIds,
     showExemptionNotice: Boolean((flags.actsAsController || flags.actsAsProcessor) && flags.isUnder250 === true &&
       !flags.isAtLeast250 && flags.processingIsOccasional === true && !flags.processingIsRegular &&
       flags.sectionB.specialDataReported === false && flags.sectionB.criminalDataReported === false),
-    outcome: ids && !controllerMissingIds.length && !processorMissingIds.length ? 'ropaReported' : null }
+    outcome: answered && !controllerMissingIds.length && !processorMissingIds.length ? 'ropaReported' : null }
 }

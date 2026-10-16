@@ -4,7 +4,7 @@ export default {
       "title": "Sezione A - Dati personali",
       "questions": {
         "section-a-data-types": {
-          "title": "La tua organizzazione tratta dati personali?",
+          "title": "La tua organizzazione tratta [[personal-data-definition|dati personali?]]",
           "prompt": "Seleziona ogni esempio che la tua organizzazione raccoglie, conserva, riceve, consulta o utilizza. Sono solo esempi: anche altre informazioni possono essere dati personali.",
           "references": [
             "GDPR articolo 4(1): dati personali",
@@ -85,7 +85,7 @@ export default {
       "questions": {
         "section-a-lawful-basis": {
           "title": "Su quali condizioni ti basi per giustificare il trattamento dei dati selezionati?",
-          "prompt": "Seleziona ogni condizione dell articolo 6 applicabile. Ogni tipo di dato raccolto deve essere giustificato per ciascuna finalita; se nessuna condizione si applica a una raccolta di dati, quei dati non dovrebbero essere raccolti o usati.",
+          "prompt": "Seleziona ogni condizione dell [[article-6|articolo 6]] applicabile. Ogni tipo di dato raccolto deve essere giustificato per ciascuna finalita; se nessuna condizione si applica a una raccolta di dati, quei dati non dovrebbero essere raccolti o usati.",
           "references": [
             "GDPR articolo 5(1)(a): liceità, correttezza e trasparenza",
             "GDPR articolo 6(1): liceità del trattamento"

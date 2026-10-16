@@ -4,7 +4,7 @@ export default {
       "title": "Section A - Personal Data",
       "questions": {
         "section-a-data-types": {
-          "title": "Does your organisation handle personal data?",
+          "title": "Does your organisation handle [[personal-data-definition|personal data?]]",
           "prompt": "Select every example your organisation collects, stores, receives, accesses, or uses. These are examples; other information can also be personal data.",
           "references": [
             "GDPR Article 4(1): personal data",
@@ -85,7 +85,7 @@ export default {
       "questions": {
         "section-a-lawful-basis": {
           "title": "What conditions do you rely on to justify processing the selected individuals' data?",
-          "prompt": "Select every Article 6 condition that applies. Every type of data gathered should be justified for each purpose; if no condition applies to some data gathering, that data should not be gathered or used.",
+          "prompt": "Select every [[article-6|Article 6]] condition that applies. Every type of data gathered should be justified for each purpose; if no condition applies to some data gathering, that data should not be gathered or used.",
           "references": [
             "GDPR Article 5(1)(a): lawfulness, fairness and transparency",
             "GDPR Article 6(1): lawfulness of processing"

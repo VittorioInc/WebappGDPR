@@ -4,7 +4,7 @@ export default {
       "title": "Sezione I - Trasferimenti internazionali",
       "questions": {
         "section-i-transfer-situations": {
-          "title": "La tua organizzazione invia dati personali, o li rende accessibili, a destinatari fuori dall’UE/SEE o a organizzazioni internazionali?",
+          "title": "La tua organizzazione invia dati personali, o li [[transfer-access|rende accessibili]], a destinatari fuori dall’[[eu-eea|UE/SEE]] o a [[international-organisation|organizzazioni internazionali]]?",
           "prompt": "Considera fornitori, partner commerciali e società del gruppo, inclusi archiviazione cloud, backup e assistenza remota. I dati possono essere accessibili a un destinatario fuori dall’UE/SEE anche quando i server si trovano nell’UE/SEE.",
           "references": [
             "GDPR articolo 4(26): definition of an international organisation",
@@ -27,8 +27,8 @@ export default {
       "title": "Sezione I - Meccanismo di trasferimento",
       "questions": {
         "section-i-transfer-mechanism": {
-          "title": "Ogni trasferimento internazionale effettuato dalla tua organizzazione, direttamente o tramite i suoi fornitori, è coperto da una decisione di adeguatezza?",
-          "prompt": "Verifica che le decisioni applicabili coprano ogni destinazione, destinatario e tipo di dati. Seleziona No se sono coperti soltanto alcuni trasferimenti; potrai indicare qui sotto i meccanismi usati per quelli rimanenti.",
+          "title": "Ogni trasferimento internazionale effettuato dalla tua organizzazione, direttamente o tramite i suoi fornitori, è coperto da una [[transfer-adequacy|decisione di adeguatezza]]?",
+          "prompt": "Verifica che le decisioni applicabili coprano ogni destinazione, destinatario e tipo di dati. Seleziona No se sono coperti soltanto alcuni trasferimenti; potrai indicare nella prossima domanda i meccanismi usati per quelli rimanenti.",
           "references": [
             "GDPR articolo 45(1): transfer on the basis of an decisione di adeguatezza",
             "GDPR articolo 46(1): garanzie adeguate and enforceable interessato rights",
@@ -47,25 +47,30 @@ export default {
               "description": "Almeno un trasferimento non è coperto da una decisione di adeguatezza."
             }
           }
-        },
+        }
+      }
+    },
+    "section-i-transfer-mechanism-alternatives": {
+      "title": "Sezione I - Meccanismo di trasferimento",
+      "questions": {
         "section-i-transfer-mechanism-alternatives": {
           "title": "Per i trasferimenti non coperti da una decisione di adeguatezza, su cosa si basa la tua organizzazione?",
-          "prompt": "Seleziona tutti i meccanismi usati per questi trasferimenti. Le prime quattro opzioni sono garanzie previste dall’articolo 46; quella dell’articolo 49 è un’eccezione con condizioni specifiche. Selezionare un meccanismo non conferma che tutte le sue condizioni siano rispettate.",
+          "prompt": "Seleziona tutti i meccanismi usati per questi trasferimenti. Le prime quattro opzioni sono garanzie previste dall’articolo 46; quella dell’[[transfer-specific-exception|articolo 49]] è un’eccezione con condizioni specifiche. Selezionare un meccanismo non conferma che tutte le sue condizioni siano rispettate.",
           "options": {
             "standard-data-protection-clauses": {
-              "label": "Clausole contrattuali tipo o altre clausole contrattuali autorizzate",
+              "label": "[[transfer-contractual-clauses|Clausole contrattuali tipo o altre clausole contrattuali autorizzate]]",
               "description": "Le parti usano condizioni contrattuali che forniscono la protezione richiesta per il trasferimento."
             },
             "binding-corporate-rules": {
-              "label": "Norme vincolanti d’impresa approvate per trasferimenti all’interno di un gruppo",
+              "label": "[[transfer-bcr|Norme vincolanti d’impresa approvate]] per trasferimenti all’interno di un gruppo",
               "description": "Le regole approvate del gruppo coprono le entità e i trasferimenti interessati."
             },
             "approved-code-or-certification": {
-              "label": "Codice di condotta o certificazione approvati con impegni vincolanti",
+              "label": "[[transfer-code-certification|Codice di condotta o certificazione approvati]] con impegni vincolanti",
               "description": "Lo strumento approvato copre il trasferimento e il destinatario assume impegni vincolanti e azionabili per proteggere i dati."
             },
             "public-authority-instrument": {
-              "label": "Strumento vincolante o accordo autorizzato tra autorità pubbliche",
+              "label": "[[transfer-public-authorities|Strumento vincolante o accordo autorizzato tra autorità pubbliche]]",
               "description": "Gli organismi pubblici usano uno strumento giuridicamente vincolante o un accordo amministrativo autorizzato che offre una protezione azionabile per le persone interessate."
             },
             "article-49-derogation": {

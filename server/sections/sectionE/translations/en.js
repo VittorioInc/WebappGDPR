@@ -68,7 +68,7 @@ export default {
             },
             "withdrawal-response-ready": {
               "label": "Withdrawal is recorded and the affected processing is promptly updated",
-              "description": "Consent-based processing stops, the consent status is updated, and erasure is considered where Article 17(1)(b) applies."
+              "description": "Consent-based processing stops, the consent status is updated, and erasure is considered where [[article-17|Article 17]](1)(b) applies."
             },
             "no-consent-withdrawal": {
               "label": "None of these statements describes the current withdrawal process",

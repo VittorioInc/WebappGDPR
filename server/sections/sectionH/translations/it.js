@@ -4,7 +4,7 @@ export default {
       "title": "Sezione H - Fornitori di servizi",
       "questions": {
         "section-h-service-provider-use": {
-          "title": "La tua organizzazione usa altre società o fornitori di servizi per trattare dati personali per suo conto?",
+          "title": "La tua organizzazione usa altre società o fornitori di servizi per trattare dati personali [[provider-on-behalf|per suo conto?]]",
           "prompt": "Includi le società distinte dello stesso gruppo e i fornitori che gestiscono per te i dati dei tuoi clienti.",
           "references": [
             "GDPR articolo 4(8): il responsabile tratta dati personali per conto di un titolare",
@@ -28,7 +28,7 @@ export default {
       "questions": {
         "section-h-provider-checks": {
           "title": "Verifichi che ciascuno di questi fornitori sia in grado di proteggere i dati personali e rispettare i propri obblighi GDPR?",
-          "prompt": "Le verifiche sui fornitori devono riguardare ogni fornitore utilizzato.",
+          "prompt": "Le [[provider-checks|verifiche sui fornitori]] devono riguardare ogni fornitore utilizzato.",
           "references": [
             "GDPR articolo 28(1), (4): garanzie sufficienti per la protezione dei dati e la conformità"
           ],
@@ -49,7 +49,7 @@ export default {
       "title": "Sezione H - Accordi con i fornitori",
       "questions": {
         "section-h-provider-agreements": {
-          "title": "Hai un accordo scritto e vincolante sul trattamento dei dati in vigore con ciascuno di questi fornitori?",
+          "title": "Hai un [[provider-agreement|accordo scritto e vincolante sul trattamento dei dati]] in vigore con ciascuno di questi fornitori?",
           "prompt": "Rispondi considerando gli accordi effettivamente in vigore con ogni fornitore, anche in formato elettronico.",
           "references": [
             "GDPR articolo 28(3)-(4), (9): condizioni vincolanti sul trattamento in forma scritta, anche elettronica"

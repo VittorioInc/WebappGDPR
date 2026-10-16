@@ -55,7 +55,7 @@ export default {
       "questions": {
         "section-b-article-9-condition": {
           "title": "Quale condizione dell articolo 9(2) GDPR permette di trattare quei dati di categoria particolare?",
-          "prompt": "Per trattare lecitamente questi dati occorre almeno una condizione applicabile dell’articolo 9(2) per ogni finalità, oltre a una base giuridica ai sensi dell’articolo 6. Finalità diverse possono basarsi su condizioni diverse. Seleziona tutte le condizioni applicabili.",
+          "prompt": "Per trattare lecitamente questi dati occorre almeno una condizione applicabile dell’articolo 9(2) per ogni finalità, oltre a una base giuridica ai sensi dell’[[article-6|articolo 6]]. Finalità diverse possono basarsi su condizioni diverse. Seleziona tutte le condizioni applicabili.",
           "references": [
             "GDPR articolo 9(2): exceptions for special-category trattamento"
           ],
@@ -111,7 +111,7 @@ export default {
           },
           "variants": {
             "both": {
-              "prompt": "Per questa domanda considera solo le attività in cui la tua organizzazione agisce come titolare. Se tratti queste categorie particolari esclusivamente per conto dei clienti, seleziona la relativa opzione qui sotto. Per trattare lecitamente questi dati occorre almeno una condizione applicabile dell’articolo 9(2) per ogni finalità, oltre a una base giuridica ai sensi dell’articolo 6. Finalità diverse possono basarsi su condizioni diverse. Seleziona tutte le condizioni applicabili."
+              "prompt": "Per questa domanda considera solo le attività in cui la tua organizzazione agisce come titolare. Se tratti queste categorie particolari esclusivamente per conto dei clienti, seleziona la relativa opzione qui sotto. Per trattare lecitamente questi dati occorre almeno una condizione applicabile dell’articolo 9(2) per ogni finalità, oltre a una base giuridica ai sensi dell’[[article-6|articolo 6]]. Finalità diverse possono basarsi su condizioni diverse. Seleziona tutte le condizioni applicabili."
             }
           }
         }
@@ -122,7 +122,7 @@ export default {
       "questions": {
         "section-b-article-10-data": {
           "title": "La tua organizzazione tratta dati personali relativi a condanne penali, reati o misure di sicurezza connesse?",
-          "prompt": "Per trattare lecitamente questi dati devi soddisfare almeno una delle due condizioni seguenti, oltre ad avere una base giuridica ai sensi dell’articolo 6. Seleziona tutte le condizioni applicabili oppure indica che non tratti questi dati.",
+          "prompt": "Per trattare lecitamente questi dati devi soddisfare almeno una delle due condizioni seguenti, oltre ad avere una base giuridica ai sensi dell’[[article-6|articolo 6]]. Seleziona tutte le condizioni applicabili oppure indica che non tratti questi dati.",
           "references": [
             "GDPR articolo 10: condanne penali, reati e misure di sicurezza connesse"
           ],
@@ -155,7 +155,7 @@ export default {
               }
             },
             "both": {
-              "prompt": "Per le condizioni giuridiche qui sotto considera solo le attività in cui la tua organizzazione agisce come titolare. Se tratti questi dati esclusivamente per conto dei clienti, seleziona la relativa opzione. Per trattare lecitamente questi dati devi soddisfare almeno una delle due condizioni seguenti, oltre ad avere una base giuridica ai sensi dell’articolo 6. Seleziona tutte le condizioni applicabili oppure indica che non tratti questi dati.",
+              "prompt": "Per le condizioni giuridiche qui sotto considera solo le attività in cui la tua organizzazione agisce come titolare. Se tratti questi dati esclusivamente per conto dei clienti, seleziona la relativa opzione. Per trattare lecitamente questi dati devi soddisfare almeno una delle due condizioni seguenti, oltre ad avere una base giuridica ai sensi dell’[[article-6|articolo 6]]. Seleziona tutte le condizioni applicabili oppure indica che non tratti questi dati.",
               "options": {
                 "article-10-processor-data": {
                   "label": "Questi dati sono trattati solo per conto dei clienti",
