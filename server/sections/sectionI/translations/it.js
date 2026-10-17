@@ -7,8 +7,8 @@ export default {
           "title": "La tua organizzazione invia dati personali, o li [[transfer-access|rende accessibili]], a destinatari fuori dall’[[eu-eea|UE/SEE]] o a [[international-organisation|organizzazioni internazionali]]?",
           "prompt": "Considera fornitori, partner commerciali e società del gruppo, inclusi archiviazione cloud, backup e assistenza remota. I dati possono essere accessibili a un destinatario fuori dall’UE/SEE anche quando i server si trovano nell’UE/SEE.",
           "references": [
-            "GDPR articolo 4(26): definition of an international organisation",
-            "GDPR articolo 44: trasferimenti verso paesi terzi o organizzazioni internazionali must comply with Chapter V"
+            "GDPR articolo 4(26): definizione di organizzazione internazionale",
+            "GDPR articolo 44: i trasferimenti verso paesi terzi o organizzazioni internazionali devono rispettare il capo V"
           ],
           "options": {
             "international-transfers-reported": {
@@ -30,12 +30,12 @@ export default {
           "title": "Ogni trasferimento internazionale effettuato dalla tua organizzazione, direttamente o tramite i suoi fornitori, è coperto da una [[transfer-adequacy|decisione di adeguatezza]]?",
           "prompt": "Verifica che le decisioni applicabili coprano ogni destinazione, destinatario e tipo di dati. Seleziona No se sono coperti soltanto alcuni trasferimenti; potrai indicare nella prossima domanda i meccanismi usati per quelli rimanenti.",
           "references": [
-            "GDPR articolo 45(1): transfer on the basis of an decisione di adeguatezza",
-            "GDPR articolo 46(1): garanzie adeguate and enforceable interessato rights",
-            "GDPR articolo 46(2): safeguards including binding corporate rules and standard data protection clauses",
-            "GDPR articolo 46(3): authorisation for other contractual clauses and public-authority administrative arrangements",
-            "GDPR articolo 47: approval and requirements for binding corporate rules",
-            "GDPR articolo 49(1): deroghe per situazioni specifiche where Article 45 or 46 is unavailable"
+            "GDPR articolo 45(1): trasferimento sulla base di una decisione di adeguatezza",
+            "GDPR articolo 46(1): garanzie adeguate e diritti azionabili degli interessati",
+            "GDPR articolo 46(2): garanzie, comprese norme vincolanti d’impresa e clausole tipo di protezione dei dati",
+            "GDPR articolo 46(3): autorizzazione per altre clausole contrattuali e accordi amministrativi tra autorità pubbliche",
+            "GDPR articolo 47: approvazione e requisiti delle norme vincolanti d’impresa",
+            "GDPR articolo 49(1): deroghe per situazioni specifiche quando non si può ricorrere agli articoli 45 o 46"
           ],
           "options": {
             "adequacy-decision": {

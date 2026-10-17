@@ -58,7 +58,7 @@ export default {
       }
     },
     "section-d-indirect-notice-exception": {
-      "title": "Sezione D - Eccezioni dell articolo 14",
+      "title": "Sezione D - Eccezioni dell’articolo 14",
       "questions": {
         "section-d-indirect-notice-exception": {
           "title": "Perché la persona non viene informata?",
@@ -92,76 +92,76 @@ export default {
       }
     },
     "section-d-notice-content": {
-      "title": "Sezione D - Contenuto dell informativa",
+      "title": "Sezione D - Contenuto dell’informativa",
       "questions": {
         "section-d-notice-content": {
-          "title": "Quali informazioni sono incluse nell informativa privacy?",
+          "title": "Quali informazioni sono incluse nell’informativa privacy?",
           "prompt": "Seleziona ogni elemento degli articoli 13 o 14 applicabile.",
           "references": [
-            "GDPR articolo 13(1)-(2): informazioni quando i dati personali sono raccolti presso l interessato",
-            "GDPR articolo 14(1)-(2): informazioni quando i dati personali non sono ottenuti presso l interessato",
-            "GDPR articolo 13(3) and Article 14(4): further trattamento for another purpose"
+            "GDPR articolo 13(1)-(2): informazioni quando i dati personali sono raccolti presso l’interessato",
+            "GDPR articolo 14(1)-(2): informazioni quando i dati personali non sono ottenuti presso l’interessato",
+            "GDPR articolo 13(3) e articolo 14(4): ulteriore trattamento per un’altra finalità"
           ],
           "options": {
             "controller-identity-contact": {
               "label": "Identità e dati di contatto del titolare",
-              "description": "L informativa identifica il titolare e fornisce i suoi dati di contatto."
+              "description": "L’informativa identifica il titolare e fornisce i suoi dati di contatto."
             },
             "dpo-contact-details": {
               "label": "Dati di contatto del DPO, se applicabile",
-              "description": "L informativa include i dati di contatto del responsabile della protezione dei dati se esiste un DPO."
+              "description": "L’informativa include i dati di contatto del responsabile della protezione dei dati se esiste un DPO."
             },
             "purposes-lawful-bases": {
               "label": "Finalità e basi giuridiche",
-              "description": "L informativa spiega perché i dati sono trattati e la base giuridica per ciascuna finalità."
+              "description": "L’informativa spiega perché i dati sono trattati e la base giuridica per ciascuna finalità."
             },
             "legitimate-interests-notice": {
               "label": "Interessi legittimi quando invocati",
-              "description": "Se sono usati interessi legittimi, l informativa identifica tali interessi."
+              "description": "Se sono usati interessi legittimi, l’informativa identifica tali interessi."
             },
             "recipients-notice": {
               "label": "Destinatari o categorie di destinatari",
-              "description": "L informativa identifica chi riceve i dati personali o le relative categorie di destinatari."
+              "description": "L’informativa identifica chi riceve i dati personali o le relative categorie di destinatari."
             },
             "transfers-safeguards-notice": {
               "label": "Trasferimenti internazionali e garanzie, se applicabili",
-              "description": "L informativa copre trasferimenti verso paesi terzi o [[international-organisation|organizzazioni internazionali]]."
+              "description": "L’informativa copre trasferimenti verso paesi terzi o [[international-organisation|organizzazioni internazionali]]."
             },
             "retention-notice": {
               "label": "Periodo di conservazione o criteri",
-              "description": "L informativa indica per quanto tempo i dati sono conservati o i criteri per determinarlo."
+              "description": "L’informativa indica per quanto tempo i dati sono conservati o i criteri per determinarlo."
             },
             "rights-notice": {
-              "label": "Diritti dell interessato",
-              "description": "L informativa spiega i diritti di accesso, rettifica, cancellazione, limitazione, opposizione e portabilità."
+              "label": "Diritti dell’interessato",
+              "description": "L’informativa spiega i diritti di accesso, rettifica, cancellazione, limitazione, opposizione e portabilità."
             },
             "withdraw-consent-notice": {
               "label": "Diritto di revocare il consenso, se pertinente",
-              "description": "Se si usa il consenso, l informativa spiega che il consenso può essere revocato."
+              "description": "Se si usa il consenso, l’informativa spiega che il consenso può essere revocato."
             },
             "complaint-authority-notice": {
-              "label": "Diritto di proporre reclamo a un autorità di controllo",
-              "description": "L informativa comunica agli interessati che possono proporre reclamo a un autorità di controllo."
+              "label": "Diritto di proporre reclamo a un’autorità di controllo",
+              "description": "L’informativa comunica agli interessati che possono proporre reclamo a un’autorità di controllo."
             },
             "required-data-consequences-notice": {
               "label": "Se fornire i dati è obbligatorio e le conseguenze del mancato conferimento",
-              "description": "Quando i dati sono raccolti dall interessato, l informativa spiega requisiti legali, contrattuali o necessari."
+              "description": "Quando i dati sono raccolti dall’interessato, l’informativa spiega requisiti legali, contrattuali o necessari."
             },
             "indirect-source-notice": {
               "label": "Fonte e categorie di dati per dati ottenuti indirettamente",
-              "description": "Quando i dati non provengono dall interessato, l informativa copre fonte e categorie."
+              "description": "Quando i dati non provengono dall’interessato, l’informativa copre fonte e categorie."
             },
             "further-processing-notice": {
               "label": "Informativa prima di usare i dati per una nuova finalità",
-              "description": "Se i dati saranno usati per un altra finalità, ulteriori informazioni sono fornite prima di tale uso."
+              "description": "Se i dati saranno usati per un’altra finalità, ulteriori informazioni sono fornite prima di tale uso."
             },
             "automated-decisions-notice": {
               "label": "Decisioni automatizzate o profilazione, se applicabili",
-              "description": "L informativa copre informazioni significative sulle decisioni automatizzate o sulla profilazione applicabili."
+              "description": "L’informativa copre informazioni significative sulle decisioni automatizzate o sulla profilazione applicabili."
             },
             "no-notice-content": {
               "label": "Nessuna delle precedenti",
-              "description": "Dalle risposte non è stato individuato alcun contenuto obbligatorio dell informativa."
+              "description": "Dalle risposte non è stato individuato alcun contenuto obbligatorio dell’informativa."
             }
           },
           "suggestionNotice": "Suggerito dalle risposte precedenti. Puoi modificarlo prima di continuare."

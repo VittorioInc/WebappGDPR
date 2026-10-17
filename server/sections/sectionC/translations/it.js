@@ -19,7 +19,7 @@ export default {
             },
             "written-data-protection-policy": {
               "label": "Regole o procedure proporzionate e scritte sulla protezione dei dati",
-              "description": "L organizzazione ha regole pratiche scritte per trattare dati personali, proporzionate alle proprie attività di trattamento."
+              "description": "L’organizzazione ha regole pratiche scritte per trattare dati personali, proporzionate alle proprie attività di trattamento."
             },
             "staff-guidance-training": {
               "label": "Indicazioni o formazione per il personale",
@@ -37,7 +37,7 @@ export default {
       "title": "Sezione C - Responsabile della protezione dei dati",
       "questions": {
         "section-c-dpo-triggers": {
-          "title": "Quale presupposto di obbligo o designazione del DPO si applica all organizzazione?",
+          "title": "Quale presupposto di obbligo o designazione del DPO si applica all’organizzazione?",
           "prompt": "Seleziona le condizioni applicabili alla tua organizzazione, compresi eventuali obblighi previsti da una legge specifica o la nomina volontaria di un DPO.",
           "explanation": "La “larga scala” non ha una soglia numerica fissa. Considera il numero o la proporzione delle persone coinvolte, la quantità e la varietà dei dati, la durata del trattamento e la sua estensione geografica. Le sole dimensioni dell’impresa non determinano la risposta.\n\nEsempi sono un ospedale che tratta le cartelle dei pazienti o una banca che tratta i dati dei clienti. Un singolo medico che tratta le cartelle dei propri pazienti o un singolo avvocato che gestisce i casi dei propri clienti generalmente non effettuano un trattamento su larga scala.",
           "explanationLinks": [
@@ -56,20 +56,20 @@ export default {
               "description": "Riguarda il monitoraggio su larga scala degli interessati come attività principale."
             },
             "large-scale-article-9-10-data": {
-              "label": "Le attività principali comportano su larga scala dati dell articolo 9 o 10 individuati nella Sezione B",
+              "label": "Le attività principali comportano su larga scala dati dell’articolo 9 o 10 individuati nella Sezione B",
               "description": "Comprende il trattamento su larga scala di categorie particolari di dati o dati relativi a condanne penali e reati come attività principale."
             },
             "member-state-law-dpo-required": {
               "label": "Una specifica legge UE o nazionale richiede un DPO",
-              "description": "È stata individuata una legge diversa dai presupposti dell articolo 37(1) che richiede all organizzazione di designare un DPO."
+              "description": "È stata individuata una legge diversa dai presupposti dell’articolo 37(1) che richiede all’organizzazione di designare un DPO."
             },
             "voluntary-dpo-designated": {
               "label": "È stato designato volontariamente un DPO",
-              "description": "L organizzazione ha scelto di designare un DPO anche se non è stato individuato alcun presupposto obbligatorio."
+              "description": "L’organizzazione ha scelto di designare un DPO anche se non è stato individuato alcun presupposto obbligatorio."
             },
             "no-dpo-trigger": {
               "label": "Non si applica alcun presupposto obbligatorio o volontario per il DPO",
-              "description": "Non è stato individuato alcun presupposto dell articolo 37, altro obbligo di legge o designazione volontaria del DPO."
+              "description": "Non è stato individuato alcun presupposto dell’articolo 37, altro obbligo di legge o designazione volontaria del DPO."
             }
           },
           "detectedNotice": {
@@ -89,9 +89,9 @@ export default {
           "prompt": "Rispondi in base a ogni presupposto obbligatorio per il DPO selezionato nel passaggio precedente.",
           "references": [
             "GDPR articolo 37(1): nomina del responsabile della protezione dei dati",
-            "GDPR articolo 37(4): designation required by Union or Member State law",
-            "GDPR articolo 37(5): professional qualities and expert knowledge",
-            "GDPR articolo 37(7): publish and communicate DPO contact details"
+            "GDPR articolo 37(4): designazione richiesta dal diritto dell’Unione o degli Stati membri",
+            "GDPR articolo 37(5): qualità professionali e conoscenza specialistica",
+            "GDPR articolo 37(7): pubblicazione e comunicazione dei dati di contatto del DPO"
           ],
           "options": {
             "dpo-designated": {

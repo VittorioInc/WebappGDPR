@@ -47,13 +47,13 @@ export default {
       "questions": {
         "section-g-rights-supported": {
           "title": "Quali diritti degli interessati può gestire attualmente la tua organizzazione?",
-          "prompt": "Seleziona ogni diritto per cui l organizzazione ha un modo di operare.",
+          "prompt": "Seleziona ogni diritto per cui l’organizzazione ha un modo di operare.",
           "references": [
-            "GDPR articolo 15: diritto di accesso dell interessato",
+            "GDPR articolo 15: diritto di accesso dell’interessato",
             "GDPR articolo 16: diritto di rettifica",
             "GDPR articolo 17: diritto alla cancellazione",
             "GDPR articolo 18: diritto alla limitazione del trattamento",
-            "GDPR articolo 19: notification obligation regarding rectification, erasure, or restriction",
+            "GDPR articolo 19: obbligo di notifica in caso di rettifica, cancellazione o limitazione",
             "GDPR articolo 20: diritto alla portabilità dei dati",
             "GDPR articolo 21: diritto di opposizione",
             "GDPR articolo 22: processo decisionale automatizzato, inclusa la profilazione"
@@ -61,31 +61,31 @@ export default {
           "options": {
             "right-access": {
               "label": "Accesso",
-              "description": "L organizzazione può confermare se tratta dati e fornire accesso, informazioni e copie."
+              "description": "L’organizzazione può confermare se tratta dati e fornire accesso, informazioni e copie."
             },
             "right-rectification": {
               "label": "Rettifica",
-              "description": "L organizzazione può correggere dati inesatti e completare dati incompleti."
+              "description": "L’organizzazione può correggere dati inesatti e completare dati incompleti."
             },
             "right-erasure": {
               "label": "Cancellazione",
-              "description": "L organizzazione può valutare e gestire richieste di cancellazione quando si applicano i presupposti dell [[article-17|articolo 17]]."
+              "description": "L’organizzazione può valutare e gestire richieste di cancellazione quando si applicano i presupposti dell’[[article-17|articolo 17]]."
             },
             "right-restriction": {
               "label": "Limitazione del trattamento",
-              "description": "L organizzazione può limitare il trattamento quando si applicano le condizioni dell [[article-18|articolo 18]]."
+              "description": "L’organizzazione può limitare il trattamento quando si applicano le condizioni dell’[[article-18|articolo 18]]."
             },
             "right-recipient-notification": {
               "label": "Notifica ai destinatari",
-              "description": "L organizzazione può notificare ai destinatari rettifica, cancellazione o limitazione quando richiesto."
+              "description": "L’organizzazione può notificare ai destinatari rettifica, cancellazione o limitazione quando richiesto."
             },
             "right-portability": {
               "label": "Portabilità dei dati",
-              "description": "L organizzazione può fornire dati portabili quando si applicano le condizioni dell [[article-20|articolo 20]]."
+              "description": "L’organizzazione può fornire dati portabili quando si applicano le condizioni dell’[[article-20|articolo 20]]."
             },
             "right-objection": {
               "label": "Opposizione",
-              "description": "L organizzazione può gestire opposizioni, incluse quelle al marketing diretto."
+              "description": "L’organizzazione può gestire opposizioni, incluse quelle al marketing diretto."
             },
             "right-automated-decision": {
               "label": "Tutele per decisioni automatizzate",

@@ -22,7 +22,7 @@ export default {
   },
   "kicker": "Calibrazione",
   "title": "Prima di iniziare la valutazione GDPR",
-  "prompt": "Rispondi una sola volta a queste domande iniziali. In seguito aiuteranno il questionario ad adattarsi all organizzazione valutata.",
+  "prompt": "Rispondi una sola volta a queste domande iniziali. In seguito aiuteranno il questionario ad adattarsi all’organizzazione valutata.",
   "questions": {
     "calibration-organisation-size": {
       "title": "Circa quante persone compongono o lavorano regolarmente nell'organizzazione?",
@@ -81,30 +81,30 @@ export default {
     },
     "calibration-eu-connection": {
       "title": "Il GDPR si applica alla tua organizzazione?",
-      "prompt": "Seleziona ogni collegamento dell articolo 3 applicabile. Seleziona l ultima risposta solo se nessuno si applica.",
+      "prompt": "Seleziona ogni collegamento dell’articolo 3 applicabile. Seleziona l’ultima risposta solo se nessuno si applica.",
       "options": {
         "eu-establishment": {
-          "label": "Siamo stabiliti nell [[eu-eea|UE/SEE]]",
-          "description": "Usa questa opzione quando il trattamento e collegato a un ufficio, filiale o stabile organizzazione nell UE/SEE, anche se il trattamento avviene altrove.",
-          "quote": "nel contesto delle attivita di uno stabilimento di un titolare del trattamento o di un responsabile del trattamento nell Unione",
+          "label": "Siamo stabiliti nell’[[eu-eea|UE/SEE]]",
+          "description": "Usa questa opzione quando il trattamento è collegato a un ufficio, filiale o stabile organizzazione nell’UE/SEE, anche se il trattamento avviene altrove.",
+          "quote": "nel contesto delle attività di uno stabilimento di un titolare del trattamento o di un responsabile del trattamento nell’Unione",
           "reference": "GDPR articolo 3(1)"
         },
         "eu-goods-services": {
-          "label": "Offriamo beni o servizi a persone nell UE/SEE",
-          "description": "Usa questa opzione quando un organizzazione fuori dall UE/SEE offre beni o servizi a persone nell UE/SEE. Non e necessario un pagamento.",
-          "quote": "l offerta di beni o la prestazione di servizi, indipendentemente dall obbligatorieta di un pagamento dell interessato",
+          "label": "Offriamo beni o servizi a persone nell’UE/SEE",
+          "description": "Usa questa opzione quando un’organizzazione fuori dall’UE/SEE offre beni o servizi a persone nell’UE/SEE. Non è necessario un pagamento.",
+          "quote": "l’offerta di beni o la prestazione di servizi, indipendentemente dall’obbligatorietà di un pagamento dell’interessato",
           "reference": "GDPR articolo 3(2)(a)"
         },
         "eu-behaviour-monitoring": {
-          "label": "Monitoriamo il comportamento di persone nell UE/SEE",
-          "description": "Usa questa opzione quando tracciamento, profilazione, analytics o monitoraggi simili riguardano comportamenti che avvengono nell UE/SEE.",
-          "quote": "il monitoraggio del loro comportamento nella misura in cui tale comportamento ha luogo all interno dell Unione",
+          "label": "Monitoriamo il comportamento di persone nell’UE/SEE",
+          "description": "Usa questa opzione quando tracciamento, profilazione, analytics o monitoraggi simili riguardano comportamenti che avvengono nell’UE/SEE.",
+          "quote": "il monitoraggio del loro comportamento nella misura in cui tale comportamento ha luogo all’interno dell’Unione",
           "reference": "GDPR articolo 3(2)(b)"
         },
         "no-eu-connection": {
           "label": "Nessun collegamento UE/SEE identificato",
-          "description": "Usa questa opzione solo se nessuno dei collegamenti UE/SEE dell articolo 3 sopra indicati si applica. Il questionario si chiudera con una nota sull ambito territoriale.",
-          "quote": "Il presente regolamento si applica al trattamento dei dati personali effettuato nell ambito delle attivita di uno stabilimento",
+          "description": "Usa questa opzione solo se nessuno dei collegamenti UE/SEE dell’articolo 3 sopra indicati si applica. Il questionario si chiuderà con una nota sull’ambito territoriale.",
+          "quote": "Il presente regolamento si applica al trattamento dei dati personali effettuato nell’ambito delle attività di uno stabilimento",
           "reference": "GDPR articolo 3"
         }
       },
@@ -114,29 +114,29 @@ export default {
       }
     },
     "calibration-processing-regularity": {
-      "title": "Il trattamento dei dati personali e una parte regolare o continuativa delle attivita dell organizzazione?",
-      "prompt": "Seleziona si quando i dati personali sono trattati come parte delle normali attivita. Seleziona no solo per trattamenti davvero eccezionali o svolti di tanto in tanto fuori dalle attivita ordinarie.",
+      "title": "Il trattamento dei dati personali è una parte regolare o continuativa delle attività dell’organizzazione?",
+      "prompt": "Seleziona sì quando i dati personali sono trattati come parte delle normali attività. Seleziona no solo per trattamenti davvero eccezionali o svolti di tanto in tanto fuori dalle attività ordinarie.",
       "options": {
         "processing-regular": {
-          "label": "Si, il trattamento e regolare o continuativo",
+          "label": "Sì, il trattamento è regolare o continuativo",
           "description": "Include normali registri di clienti, account, ordini, prenotazioni, assistenza, personale, fornitori, marketing, analytics o servizi, anche se i dati sono basilari o cancellati quando il servizio termina."
         },
         "processing-occasional": {
-          "label": "No, il trattamento e solo occasionale",
-          "description": "Usa questa opzione solo quando i dati personali sono trattati in modo eccezionale o incidentale, fuori dal normale modo ricorrente di operare dell organizzazione."
+          "label": "No, il trattamento è solo occasionale",
+          "description": "Usa questa opzione solo quando i dati personali sono trattati in modo eccezionale o incidentale, fuori dal normale modo ricorrente di operare dell’organizzazione."
         }
       }
     },
     "calibration-processing-scale": {
-      "title": "Il trattamento e probabilmente su larga scala?",
+      "title": "Il trattamento è probabilmente su larga scala?",
       "prompt": "Il GDPR non stabilisce una soglia numerica fissa. Considera il numero di persone interessate (anche come quota della popolazione rilevante), la quantità e varietà dei dati, la durata del trattamento e la sua estensione geografica. Valuta questi fattori nel loro insieme.",
       "options": {
         "large-scale-processing": {
-          "label": "Si, il trattamento e probabilmente su larga scala",
+          "label": "Sì, il trattamento è probabilmente su larga scala",
           "description": "Esempi sono un ospedale che gestisce le cartelle dei pazienti, una banca o un’assicurazione che tratta i dati dei clienti o un gestore dei trasporti che monitora gli spostamenti in una città. Confronta la portata delle tue attività con questi esempi."
         },
         "not-large-scale-processing": {
-          "label": "No, il trattamento non e su larga scala",
+          "label": "No, il trattamento non è su larga scala",
           "description": "Esempi sono un singolo medico che cura i propri pazienti o un singolo avvocato che gestisce i casi dei propri clienti. Un trattamento non è su larga scala solo perché è regolare o essenziale al servizio."
         }
       }

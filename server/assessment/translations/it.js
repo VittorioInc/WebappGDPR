@@ -12,7 +12,7 @@ export default {
     "introduction": "Questi messaggi riflettono le vostre risposte e soltanto le verifiche svolte nel questionario. Il rispetto dichiarato dei requisiti non è una verifica indipendente della conformità al GDPR. Le verifiche saltate e gli aspetti che richiedono ulteriori valutazioni giuridiche o dei rischi sono indicati separatamente."
   },
   "referencesTitle": "Riferimenti alla fonte GDPR",
-  "disclaimer": "Questo report è un autovalutazione, non un parere legale.",
+  "disclaimer": "Questo report è un’autovalutazione, non un parere legale.",
   "multipleSelected": "{count} opzioni selezionate.",
   "pdf": {
     "title": "Questionario di conformità GDPR",

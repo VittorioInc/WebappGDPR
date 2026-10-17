@@ -4,15 +4,15 @@ export default {
       "title": "Sezione B - Categorie particolari di dati",
       "questions": {
         "section-b-special-category-data": {
-          "title": "I dati personali individuati rientrano in queste categorie particolari dell articolo 9 GDPR?",
-          "prompt": "Seleziona ogni categoria dell articolo 9 applicabile.",
+          "title": "I dati personali individuati rientrano in queste categorie particolari dell’articolo 9 GDPR?",
+          "prompt": "Seleziona ogni categoria dell’articolo 9 applicabile.",
           "references": [
             "GDPR articolo 9(1): categorie particolari di dati personali"
           ],
           "options": {
             "racial-ethnic-origin": {
               "label": "Origine razziale o etnica",
-              "description": "Dati personali che rivelano l origine razziale o etnica."
+              "description": "Dati personali che rivelano l’origine razziale o etnica."
             },
             "political-opinions": {
               "label": "Opinioni politiche",
@@ -24,7 +24,7 @@ export default {
             },
             "trade-union-membership": {
               "label": "Appartenenza sindacale",
-              "description": "Dati personali che rivelano l appartenenza sindacale."
+              "description": "Dati personali che rivelano l’appartenenza sindacale."
             },
             "genetic-data": {
               "label": "Dati genetici",
@@ -36,28 +36,28 @@ export default {
             },
             "health-data": {
               "label": "Dati relativi alla salute",
-              "description": "Dati personali relativi allo stato di salute, all assistenza o alle cure di una persona."
+              "description": "Dati personali relativi allo stato di salute, all’assistenza o alle cure di una persona."
             },
             "sex-life-sexual-orientation": {
               "label": "Vita sessuale o orientamento sessuale",
-              "description": "Dati personali relativi alla vita sessuale o all orientamento sessuale di una persona fisica."
+              "description": "Dati personali relativi alla vita sessuale o all’orientamento sessuale di una persona fisica."
             },
             "no-special-category-data": {
               "label": "Nessuna delle precedenti",
-              "description": "Dalle risposte non sono state individuate categorie particolari di dati dell articolo 9."
+              "description": "Dalle risposte non sono state individuate categorie particolari di dati dell’articolo 9."
             }
           }
         }
       }
     },
     "section-b-article-9-condition": {
-      "title": "Sezione B - Condizioni dell articolo 9",
+      "title": "Sezione B - Condizioni dell’articolo 9",
       "questions": {
         "section-b-article-9-condition": {
-          "title": "Quale condizione dell articolo 9(2) GDPR permette di trattare quei dati di categoria particolare?",
+          "title": "Quale condizione dell’articolo 9(2) GDPR permette di trattare quei dati di categoria particolare?",
           "prompt": "Per trattare lecitamente questi dati occorre almeno una condizione applicabile dell’articolo 9(2) per ogni finalità, oltre a una base giuridica ai sensi dell’[[article-6|articolo 6]]. Finalità diverse possono basarsi su condizioni diverse. Seleziona tutte le condizioni applicabili.",
           "references": [
-            "GDPR articolo 9(2): exceptions for special-category trattamento"
+            "GDPR articolo 9(2): eccezioni per il trattamento di categorie particolari di dati"
           ],
           "options": {
             "special-data-processor-only": {
@@ -66,7 +66,7 @@ export default {
             },
             "explicit-consent": {
               "label": "Consenso esplicito",
-              "description": "L interessato ha prestato consenso esplicito per una o più finalità specifiche, salvo che la legge impedisca di basarsi sul consenso."
+              "description": "L’interessato ha prestato consenso esplicito per una o più finalità specifiche, salvo che la legge impedisca di basarsi sul consenso."
             },
             "employment-social-security-law": {
               "label": "Diritto del lavoro, sicurezza sociale o protezione sociale",
@@ -74,15 +74,15 @@ export default {
             },
             "article-9-vital-interests": {
               "label": "Interessi vitali quando il consenso non può essere prestato",
-              "description": "Il trattamento è necessario per tutelare interessi vitali quando l interessato è fisicamente o giuridicamente incapace di prestare consenso."
+              "description": "Il trattamento è necessario per tutelare interessi vitali quando l’interessato è fisicamente o giuridicamente incapace di prestare consenso."
             },
             "not-for-profit-body": {
               "label": "Attività legittime di un ente senza scopo di lucro qualificato",
               "description": "Il trattamento è effettuato da una fondazione, associazione o altro ente senza scopo di lucro con finalità politica, filosofica, religiosa o sindacale, con garanzie."
             },
             "manifestly-public": {
-              "label": "Dati resi manifestamente pubblici dall interessato",
-              "description": "Il trattamento riguarda dati personali resi manifestamente pubblici dall interessato."
+              "label": "Dati resi manifestamente pubblici dall’interessato",
+              "description": "Il trattamento riguarda dati personali resi manifestamente pubblici dall’interessato."
             },
             "legal-claims-courts": {
               "label": "Accertamento, esercizio o difesa di diritti in sede giudiziaria",
@@ -90,7 +90,7 @@ export default {
             },
             "substantial-public-interest": {
               "label": "Interesse pubblico rilevante basato sulla legge",
-              "description": "Il trattamento è necessario per motivi di interesse pubblico rilevante sulla base del diritto dell Unione o degli Stati membri, con garanzie adeguate."
+              "description": "Il trattamento è necessario per motivi di interesse pubblico rilevante sulla base del diritto dell’Unione o degli Stati membri, con garanzie adeguate."
             },
             "health-social-care": {
               "label": "Salute, medicina del lavoro o assistenza sociale",
@@ -98,15 +98,15 @@ export default {
             },
             "public-health": {
               "label": "Sanità pubblica basata sulla legge",
-              "description": "Il trattamento è necessario per motivi di interesse pubblico nel settore della sanità pubblica, sulla base del diritto dell Unione o degli Stati membri."
+              "description": "Il trattamento è necessario per motivi di interesse pubblico nel settore della sanità pubblica, sulla base del diritto dell’Unione o degli Stati membri."
             },
             "research-statistics-archiving": {
               "label": "Archiviazione, ricerca o statistica basate sulla legge",
-              "description": "Il trattamento è necessario per archiviazione nel pubblico interesse, ricerca scientifica o storica, o finalità statistiche con le garanzie dell articolo 89."
+              "description": "Il trattamento è necessario per archiviazione nel pubblico interesse, ricerca scientifica o storica, o finalità statistiche con le garanzie dell’articolo 89."
             },
             "no-article-9-condition": {
               "label": "Nessuna delle precedenti",
-              "description": "Non è stata individuata alcuna condizione dell articolo 9 per il trattamento di categorie particolari."
+              "description": "Non è stata individuata alcuna condizione dell’articolo 9 per il trattamento di categorie particolari."
             }
           },
           "variants": {
@@ -132,15 +132,15 @@ export default {
               "description": ""
             },
             "article-10-official-authority-control": {
-              "label": "Il trattamento è effettuato sotto il controllo dell autorità pubblica",
-              "description": "I dati dell articolo 10 sono trattati sotto il controllo dell autorità pubblica, come richiesto dall articolo 10."
+              "label": "Il trattamento è effettuato sotto il controllo dell’autorità pubblica",
+              "description": "I dati dell’articolo 10 sono trattati sotto il controllo dell’autorità pubblica, come richiesto dall’articolo 10."
             },
             "article-10-law-authorised-safeguards": {
               "label": "Il trattamento è autorizzato dal diritto UE o nazionale con garanzie",
               "description": "Il trattamento è autorizzato dalla legge applicabile, che prevede garanzie adeguate per i diritti e le libertà degli interessati."
             },
             "no-article-10-data": {
-              "label": "Non sono trattati dati dell articolo 10",
+              "label": "Non sono trattati dati dell’articolo 10",
               "description": "Non sono stati individuati dati personali relativi a condanne penali, reati o misure di sicurezza connesse."
             }
           },

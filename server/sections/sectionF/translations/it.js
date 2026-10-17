@@ -8,9 +8,9 @@ export default {
           "prompt": "Seleziona ogni affermazione vera. Le risposte determinano le eventuali domande sul consenso e le raccomandazioni relative ai minori nel report finale.",
           "references": [
             "GDPR considerando 38: i minori meritano una protezione specifica",
-            "GDPR articolo 8(1): child consent in relation to information society services",
-            "GDPR articolo 12(1): clear and plain language for information addressed to a child",
-            "GDPR articolo 17(1)(f): erasure for data collected in relation to Article 8(1) services"
+            "GDPR articolo 8(1): consenso dei minori in relazione ai servizi della società dell’informazione",
+            "GDPR articolo 12(1): linguaggio chiaro e semplice per le informazioni rivolte a un minore",
+            "GDPR articolo 17(1)(f): cancellazione dei dati raccolti in relazione ai servizi dell’articolo 8(1)"
           ],
           "options": {
             "children-data-handled": {
@@ -19,11 +19,11 @@ export default {
             },
             "child-directed-information": {
               "label": "Informative privacy o altre comunicazioni GDPR sono rivolte direttamente a minori",
-              "description": "L articolo 12(1) richiede che le informazioni rivolte specificamente a un minore usino un linguaggio chiaro e semplice."
+              "description": "L’articolo 12(1) richiede che le informazioni rivolte specificamente a un minore usino un linguaggio chiaro e semplice."
             },
             "child-consent-online-service": {
               "label": "Il consenso è usato per un servizio online offerto direttamente a minori",
-              "description": "L articolo 8 può applicarsi quando il consenso è la base giuridica per un servizio della società dell informazione offerto direttamente a un minore."
+              "description": "L’articolo 8 può applicarsi quando il consenso è la base giuridica per un servizio della società dell’informazione offerto direttamente a un minore."
             },
             "child-marketing-profiling": {
               "label": "I dati dei minori sono usati per marketing o profilazione",

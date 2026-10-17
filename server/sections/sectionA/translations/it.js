@@ -36,7 +36,7 @@ export default {
             },
             "device-identifiers": {
               "label": "Identificativi univoci del dispositivo",
-              "description": "ID dispositivo, numeri di serie, identificativi hardware o identificativi generati dall app."
+              "description": "ID dispositivo, numeri di serie, identificativi hardware o identificativi generati dall’app."
             },
             "account-identifiers": {
               "label": "Identificativi account o cliente",
@@ -85,35 +85,35 @@ export default {
       "questions": {
         "section-a-lawful-basis": {
           "title": "Su quali condizioni ti basi per giustificare il trattamento dei dati selezionati?",
-          "prompt": "Seleziona ogni condizione dell [[article-6|articolo 6]] applicabile. Ogni tipo di dato raccolto deve essere giustificato per ciascuna finalita; se nessuna condizione si applica a una raccolta di dati, quei dati non dovrebbero essere raccolti o usati.",
+          "prompt": "Seleziona ogni condizione dell’[[article-6|articolo 6]] applicabile. Ogni tipo di dato raccolto deve essere giustificato per ciascuna finalità; se nessuna condizione si applica a una raccolta di dati, quei dati non dovrebbero essere raccolti o usati.",
           "references": [
             "GDPR articolo 5(1)(a): liceità, correttezza e trasparenza",
             "GDPR articolo 6(1): liceità del trattamento"
           ],
           "options": {
             "consent": {
-              "label": "Consenso dell interessato",
-              "description": "L interessato ha prestato il consenso al trattamento per una o più finalità specifiche."
+              "label": "Consenso dell’interessato",
+              "description": "L’interessato ha prestato il consenso al trattamento per una o più finalità specifiche."
             },
             "contract": {
               "label": "Contratto o misure precontrattuali",
-              "description": "Il trattamento è necessario per un contratto con l interessato o per adottare misure richieste prima della conclusione del contratto."
+              "description": "Il trattamento è necessario per un contratto con l’interessato o per adottare misure richieste prima della conclusione del contratto."
             },
             "legal-obligation": {
               "label": "Obbligo legale",
-              "description": "Il trattamento è necessario per adempiere un obbligo legale applicabile all organizzazione."
+              "description": "Il trattamento è necessario per adempiere un obbligo legale applicabile all’organizzazione."
             },
             "vital-interests": {
               "label": "Interessi vitali",
-              "description": "Il trattamento è necessario per tutelare gli interessi vitali dell interessato o di un altra persona fisica."
+              "description": "Il trattamento è necessario per tutelare gli interessi vitali dell’interessato o di un’altra persona fisica."
             },
             "legitimate-interests": {
               "label": "Interessi legittimi",
-              "description": "Il trattamento è necessario per gli interessi legittimi dell organizzazione o di terzi, salvo prevalgano i diritti e le libertà dell interessato."
+              "description": "Il trattamento è necessario per gli interessi legittimi dell’organizzazione o di terzi, salvo prevalgano i diritti e le libertà dell’interessato."
             },
             "no-article-6-basis": {
               "label": "Nessuna delle precedenti",
-              "description": "Usa questa opzione se al momento non si applica nessuna condizione dell articolo 6."
+              "description": "Usa questa opzione se al momento non si applica nessuna condizione dell’articolo 6."
             }
           }
         }
@@ -127,8 +127,8 @@ export default {
           "prompt": "Raccogli dati personali soltanto per finalità chiaramente definite, lecite e legittime, e soltanto nella misura necessaria a conseguirle. Non raccogliere dati che non servono ad alcuna di queste finalità. Sono i principi GDPR di limitazione della finalità e minimizzazione dei dati.",
           "references": [
             "GDPR articolo 5(1)(b): limitazione della finalità",
-            "GDPR articolo 5(1)(c): data minimisation",
-            "GDPR articolo 30(1)(b): purposes of the trattamento"
+            "GDPR articolo 5(1)(c): minimizzazione dei dati",
+            "GDPR articolo 30(1)(b): finalità del trattamento"
           ],
           "options": {
             "products-services": {
@@ -145,7 +145,7 @@ export default {
             },
             "analytics-improvement": {
               "label": "Analisi del sito o miglioramento del servizio",
-              "description": "Comprensione dell uso di siti, app, prodotti, servizi o processi interni."
+              "description": "Comprensione dell’uso di siti, app, prodotti, servizi o processi interni."
             },
             "payments-accounting": {
               "label": "Pagamenti, fatturazione e contabilità",
@@ -165,7 +165,7 @@ export default {
             },
             "internal-administration": {
               "label": "Altra amministrazione interna",
-              "description": "Gestione dell organizzazione quando la finalità non rientra nelle categorie precedenti."
+              "description": "Gestione dell’organizzazione quando la finalità non rientra nelle categorie precedenti."
             }
           }
         }
