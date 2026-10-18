@@ -86,6 +86,11 @@ export default {
         "section-a-lawful-basis": {
           "title": "What conditions do you rely on to justify processing the selected individuals' data?",
           "prompt": "Select every [[article-6|Article 6]] condition that applies. Every type of data gathered should be justified for each purpose; if no condition applies to some data gathering, that data should not be gathered or used.",
+          "variants": {
+            "both": {
+              "prompt": "Consider only processing activities where your organisation acts as controller.\n\nSelect every [[article-6|Article 6]] condition that applies. Every type of data gathered should be justified for each purpose; if no condition applies to some data gathering, that data should not be gathered or used."
+            }
+          },
           "references": [
             "GDPR Article 5(1)(a): lawfulness, fairness and transparency",
             "GDPR Article 6(1): lawfulness of processing"
@@ -125,6 +130,11 @@ export default {
         "section-a-processing-purposes": {
           "title": "For what purposes does your organisation use the selected personal data?",
           "prompt": "Collect personal data only for clearly defined, lawful and legitimate purposes, and only as much as you need to fulfil them. Do not collect data that serves no such purpose. These are the GDPR principles of purpose limitation and data minimisation.",
+          "variants": {
+            "both": {
+              "prompt": "Consider only processing activities where your organisation acts as controller.\n\nCollect personal data only for clearly defined, lawful and legitimate purposes, and only as much as you need to fulfil them. Do not collect data that serves no such purpose. These are the GDPR principles of purpose limitation and data minimisation."
+            }
+          },
           "references": [
             "GDPR Article 5(1)(b): purpose limitation",
             "GDPR Article 5(1)(c): data minimisation",
@@ -187,8 +197,11 @@ export default {
         "This questionnaire asks about data categories, purposes and lawful bases separately. It does not verify that each category is justified for every purpose for which you use it."
       ],
       "legitimateInterests": "Identify the legitimate interest pursued, check that the processing is necessary, and assess whether the affected people’s interests and rights override it. Document this assessment, including any safeguards.",
-      "purposeLimitation": "Describe your purposes specifically: broad labels such as “marketing” or “internal administration” are only starting points. Before using existing data for a new purpose, check whether that use is legally permitted; the original justification does not automatically cover it."
+      "purposeLimitation": "Describe your purposes specifically: broad labels such as “marketing” or “internal administration” are only starting points. Before using existing data for a new purpose, check whether that use is legally permitted; the original justification does not automatically cover it.",
+      "controllerContext": "The following lawful-basis and purpose recommendations concern only activities where your organisation acts as controller.",
+      "processorOnly": "The lawful-basis and purpose questions were skipped because you reported acting solely as a processor. For processing performed on a client’s behalf, the controller determines the purposes and establishes the lawful basis. Follow its documented instructions and immediately inform it if you believe an instruction breaches data-protection law."
     },
-    "basisReported": "You reported processing grounds and purposes. Their applicability still needs to be checked for each activity and category of data."
+    "basisReported": "You reported processing grounds and purposes. Their applicability still needs to be checked for each activity and category of data.",
+    "basisReportedBoth": "You reported processing grounds and purposes for activities where you act as controller. Their applicability still needs to be checked for each activity and category of data."
   }
 }

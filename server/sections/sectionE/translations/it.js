@@ -95,8 +95,9 @@ export default {
       }
     },
     "outcomes": {
-      "consentSkipped": "Non avete dichiarato trattamenti basati sul consenso; le verifiche del consenso e della revoca sono quindi state saltate.",
-      "consentFulfilled": "In base alle vostre risposte, dichiarate di rispettare tutti i requisiti del consenso e della revoca valutati in questa sezione."
+      "consentSkipped": "Non hai dichiarato trattamenti basati sul consenso per le attività in cui operi come titolare; le verifiche del consenso e della revoca sono quindi state saltate.",
+      "consentFulfilled": "Per le attività in cui operi come titolare, dichiari di rispettare tutti i requisiti del consenso e della revoca valutati in questa sezione.",
+      "consentControllerSkipped": "Le verifiche sul consenso e sulla revoca rivolte al titolare sono state saltate perché hai dichiarato di operare esclusivamente come responsabile del trattamento. Questo non permette di stabilire se i tuoi clienti facciano affidamento sul consenso; assistili secondo le loro istruzioni documentate."
     }
   }
 }

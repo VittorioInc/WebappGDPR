@@ -73,9 +73,9 @@ function deriveFlags(pageAnswers) {
     noEuConnectionIdentified: selected('eu-connection', 'no-eu-connection'),
     processingIsOccasional: selected('processing-regularity', 'processing-occasional'),
     processingIsRegular: selected('processing-regularity', 'processing-regular'),
-    isLargeScaleLikely: selected('processing-scale', 'large-scale-processing'),
-    sectionA: deriveSectionAFlags(pageAnswers)
+    isLargeScaleLikely: selected('processing-scale', 'large-scale-processing')
   }
+  flags.sectionA = deriveSectionAFlags(pageAnswers, flags)
   flags.sectionB = deriveSectionBFlags(pageAnswers, flags)
   flags.sectionC = deriveSectionCFlags(pageAnswers, flags)
   flags.sectionD = deriveSectionDFlags(pageAnswers, flags)
@@ -109,11 +109,12 @@ function deriveSectionBFlags(answers, roles) {
   }
 }
 
-function deriveSectionAFlags(answers) {
+function deriveSectionAFlags(answers, roles) {
   const selection = id => answers[id]?.[id] ?? null
   const categories = selection('section-a-data-types')
-  const basis = selection('section-a-lawful-basis')
-  const purposes = selection('section-a-processing-purposes')
+  // These questions concern controller activities; a role-based skip is unknown, not No.
+  const basis = roles.actsAsController ? selection('section-a-lawful-basis') : null
+  const purposes = roles.actsAsController ? selection('section-a-processing-purposes') : null
   return {
     noPersonalDataReported: categories?.includes('none-of-the-above') ?? null,
     noPersonalDataConfirmed: selection('section-a-no-data-confirm')?.includes('no-personal-data-confirmed') ?? null,
@@ -153,6 +154,8 @@ function deriveSectionCFlags(answers, flags) {
   }
   return {
     suggestedDpoIds, needsDpoDesignation, governanceAdviceKeys,
+    dpoDesignationMissing: Boolean((flags.actsAsController || flags.actsAsProcessor) &&
+      needsDpoDesignation && designation?.includes('dpo-not-designated')),
     dpoDesignatedReported: designation ? designation.includes('dpo-designated') : triggers?.includes('voluntary-dpo-designated') ?? false,
     governanceReported: Boolean(measures && !governanceAdviceKeys.length && triggers &&
       (noDpoBasis || voluntaryOnly || (needsDpoDesignation && designation?.includes('dpo-designated'))))
@@ -179,6 +182,10 @@ function deriveSectionDFlags(answers, flags) {
   if (indirect === 'indirect-notice-late' || (needsExceptionQuestion && exceptions?.includes('no-article-14-exception'))) adviceKeys.push('indirectTiming')
   if (exceptions?.length && !exceptions.includes('no-article-14-exception')) adviceKeys.push('exceptionScope',
     ...checklistIds(sectionDDefinitions, 'section-d-indirect-notice-exception').filter(id => exceptions.includes(id)))
+  // One review reminder, not an individual finding for each unchecked topic.
+  if (content?.length && checklistIds(sectionDDefinitions, 'section-d-notice-content').some(id => !content.includes(id))) {
+    adviceKeys.push('noticeContentReview')
+  }
   const timely = flags.actsAsController && (flags.getsDataDirectly || flags.getsDataFromOtherSources) &&
     (!flags.getsDataDirectly || direct === 'direct-notice-at-collection') &&
     (!flags.getsDataFromOtherSources || indirect === 'indirect-notice-on-time')
@@ -192,9 +199,10 @@ function deriveSectionDFlags(answers, flags) {
 
 function deriveSectionEFlags(answers, flags) {
   const selection = id => answers[id]?.[id] ?? null
-  const explicitConsentReported = flags.sectionB.article9Status === 'reported' &&
+  const explicitConsentReported = flags.actsAsController && flags.sectionB.article9Status === 'reported' &&
     Boolean(selection('section-b-article-9-condition')?.includes('explicit-consent'))
-  const consentReported = Boolean(flags.sectionA.basisIds?.includes('consent') || explicitConsentReported)
+  const consentReported = Boolean(flags.actsAsController &&
+    (flags.sectionA.basisIds?.includes('consent') || explicitConsentReported))
   const conditions = consentReported ? selection('section-e-consent-conditions') : null
   const withdrawal = consentReported ? selection('section-e-consent-withdrawal') : null
   const conditionIds = checklistIds(sectionEDefinitions, 'section-e-consent-conditions')
@@ -208,7 +216,8 @@ function deriveSectionEFlags(answers, flags) {
     (flags.sectionB.specialDataReported === false || !flags.actsAsController || flags.sectionB.article9Status !== null)
   return {
     consentReported, explicitConsentReported, missingRequirementIds,
-    outcome: !consentReported && scopeAnswered && flags.sectionA.basisStatus === 'reported' && selection('section-f-child-involvement') ? 'consentSkipped'
+    outcome: !flags.actsAsController && flags.actsAsProcessor && flags.sectionA.categoryIds?.length ? 'consentControllerSkipped'
+      : !consentReported && scopeAnswered && flags.sectionA.basisStatus === 'reported' && selection('section-f-child-involvement') ? 'consentSkipped'
       : conditions && withdrawal && !missingRequirementIds.length ? 'consentFulfilled' : null
   }
 }

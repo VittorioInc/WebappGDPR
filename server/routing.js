@@ -31,7 +31,7 @@ function isEligible({ pageId, flags }) {
   if (pageId === 'section-f-parental-authorisation') return flags.sectionF.needsParentalAuthorisation
   if (pageId === 'section-a-no-data-confirm') return flags.sectionA.noPersonalDataReported === true
   if (['section-a-lawful-basis', 'section-a-processing-purposes'].includes(pageId)) {
-    return flags.sectionA.noPersonalDataReported !== true
+    return flags.actsAsController && flags.sectionA.noPersonalDataReported !== true
   }
   return true
 }

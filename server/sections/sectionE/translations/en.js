@@ -95,8 +95,9 @@ export default {
       }
     },
     "outcomes": {
-      "consentSkipped": "No consent-based processing was reported, so consent and withdrawal checks were skipped.",
-      "consentFulfilled": "Based on your answers, you report fulfilling all consent and withdrawal requirements assessed in this section."
+      "consentSkipped": "No consent-based processing was reported for activities where you act as controller, so consent and withdrawal checks were skipped.",
+      "consentFulfilled": "For activities where you act as controller, you report fulfilling all consent and withdrawal requirements assessed in this section.",
+      "consentControllerSkipped": "Controller consent and withdrawal checks were skipped because you reported acting solely as a processor. This does not establish whether your clients rely on consent; assist them under their documented instructions."
     }
   }
 }

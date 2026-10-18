@@ -173,6 +173,7 @@ export default {
     "label": "Section D",
     "guidance": {
       "title": "Section D - Privacy information",
+      "noticeContentReview": "You did not confirm every privacy-notice topic listed in the questionnaire. Review your notice against that checklist and add any information required for your processing that is missing. Some topics apply only in particular circumstances, such as DPO contact details, international transfers or reliance on consent. An unchecked item therefore does not, by itself, establish that your notice is incomplete.",
       "directTiming": "Provide the required privacy information when you collect the person’s data. For example, place it beside a collection form or make it available before someone gives their details. You do not need to repeat information the person already has, but provide anything missing or changed.",
       "indirectTiming": "Arrange to inform people within a reasonable period after obtaining their data, at the latest within one month. If you contact them or disclose their data to another recipient sooner, provide the information by that first contact or disclosure. An exception applies only to the information and processing covered by its conditions. If it covers only part of your processing, you must still provide the remaining required information.",
       "alreadyInformed": "Check that the person already has complete, accurate information about your processing. Keep evidence supporting that conclusion.",

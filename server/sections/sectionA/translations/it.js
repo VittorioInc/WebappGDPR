@@ -86,6 +86,11 @@ export default {
         "section-a-lawful-basis": {
           "title": "Su quali condizioni ti basi per giustificare il trattamento dei dati selezionati?",
           "prompt": "Seleziona ogni condizione dell’[[article-6|articolo 6]] applicabile. Ogni tipo di dato raccolto deve essere giustificato per ciascuna finalità; se nessuna condizione si applica a una raccolta di dati, quei dati non dovrebbero essere raccolti o usati.",
+          "variants": {
+            "both": {
+              "prompt": "Considera soltanto le attività di trattamento in cui la tua organizzazione opera come titolare del trattamento.\n\nSeleziona ogni condizione dell’[[article-6|articolo 6]] applicabile. Ogni tipo di dato raccolto deve essere giustificato per ciascuna finalità; se nessuna condizione si applica a una raccolta di dati, quei dati non dovrebbero essere raccolti o usati."
+            }
+          },
           "references": [
             "GDPR articolo 5(1)(a): liceità, correttezza e trasparenza",
             "GDPR articolo 6(1): liceità del trattamento"
@@ -125,6 +130,11 @@ export default {
         "section-a-processing-purposes": {
           "title": "Per quali finalità la tua organizzazione usa i dati personali selezionati?",
           "prompt": "Raccogli dati personali soltanto per finalità chiaramente definite, lecite e legittime, e soltanto nella misura necessaria a conseguirle. Non raccogliere dati che non servono ad alcuna di queste finalità. Sono i principi GDPR di limitazione della finalità e minimizzazione dei dati.",
+          "variants": {
+            "both": {
+              "prompt": "Considera soltanto le attività di trattamento in cui la tua organizzazione opera come titolare del trattamento.\n\nRaccogli dati personali soltanto per finalità chiaramente definite, lecite e legittime, e soltanto nella misura necessaria a conseguirle. Non raccogliere dati che non servono ad alcuna di queste finalità. Sono i principi GDPR di limitazione della finalità e minimizzazione dei dati."
+            }
+          },
           "references": [
             "GDPR articolo 5(1)(b): limitazione della finalità",
             "GDPR articolo 5(1)(c): minimizzazione dei dati",
@@ -187,8 +197,11 @@ export default {
         "Questo questionario chiede separatamente le categorie di dati, le finalità e le basi giuridiche. Non verifica che ogni categoria sia giustificata per ciascuna finalità per cui viene utilizzata."
       ],
       "legitimateInterests": "Individua l’interesse legittimo perseguito, verifica che il trattamento sia necessario e valuta se gli interessi e i diritti delle persone coinvolte prevalgano su tale interesse. Documenta questa valutazione, comprese le eventuali garanzie.",
-      "purposeLimitation": "Descrivi le tue finalità in modo specifico: indicazioni generiche come “marketing” o “amministrazione interna” sono soltanto punti di partenza. Prima di usare dati esistenti per una nuova finalità, verifica che tale uso sia giuridicamente consentito; la giustificazione originaria non lo copre automaticamente."
+      "purposeLimitation": "Descrivi le tue finalità in modo specifico: indicazioni generiche come “marketing” o “amministrazione interna” sono soltanto punti di partenza. Prima di usare dati esistenti per una nuova finalità, verifica che tale uso sia giuridicamente consentito; la giustificazione originaria non lo copre automaticamente.",
+      "controllerContext": "Le seguenti raccomandazioni sulla base giuridica e sulle finalità riguardano soltanto le attività in cui la tua organizzazione opera come titolare del trattamento.",
+      "processorOnly": "Le domande sulla base giuridica e sulle finalità sono state saltate perché hai dichiarato di operare esclusivamente come responsabile del trattamento. Per i trattamenti svolti per conto di un cliente, il titolare determina le finalità e individua la base giuridica. Segui le sue istruzioni documentate e informalo immediatamente se ritieni che un’istruzione violi la normativa sulla protezione dei dati."
     },
-    "basisReported": "Avete dichiarato presupposti e finalità del trattamento. La loro applicabilità va comunque verificata per ogni attività e categoria di dati."
+    "basisReported": "Avete dichiarato presupposti e finalità del trattamento. La loro applicabilità va comunque verificata per ogni attività e categoria di dati.",
+    "basisReportedBoth": "Hai dichiarato presupposti e finalità del trattamento per le attività in cui operi come titolare. La loro applicabilità va comunque verificata per ogni attività e categoria di dati."
   }
 }

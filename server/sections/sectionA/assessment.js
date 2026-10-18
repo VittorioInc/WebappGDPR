@@ -20,10 +20,14 @@ export function createSectionAssessment({ flags, copy, questionCopy }) {
       if (section.legitimateInterestsReported) paragraphs.push(copy.lawfulBasis.legitimateInterests)
     }
     if (section.purposeIds?.length) paragraphs.push(copy.lawfulBasis.purposeLimitation)
+    if (paragraphs.length && flags.actsAsProcessor) paragraphs.unshift(copy.lawfulBasis.controllerContext)
     add(copy.lawfulBasis.title, paragraphs)
+  } else if (flags.actsAsProcessor && section.categoryIds?.length) {
+    add(copy.lawfulBasis.title, [copy.lawfulBasis.processorOnly])
   }
   return {
     blocks,
-    outcomes: section.basisAndPurposesReported ? [`A: ${copy.basisReported}`] : []
+    outcomes: flags.actsAsController && section.basisAndPurposesReported
+      ? [`A: ${flags.actsAsProcessor ? copy.basisReportedBoth : copy.basisReported}`] : []
   }
 }
