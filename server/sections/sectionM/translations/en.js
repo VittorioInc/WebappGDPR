@@ -14,7 +14,10 @@ export default {
             "GDPR Article 30(5): the under-250 exemption also depends on processing frequency, risks and data categories",
             "EDPB-endorsed Article 30(5) position paper: assess the exemption by processing activity"
           ],
-          "exemptionNotice": "Your earlier answers indicate that your organisation has fewer than 250 employees, processes personal data only occasionally, and does not process sensitive personal data (Article 9) or criminal-conviction and offence data (Article 10). If your processing is also unlikely to create a risk to people’s rights and freedoms, you may qualify for an exemption from keeping a RoPA. We still recommend creating one to help organise and demonstrate your data-protection practices.",
+          "exemptionNotice": {
+            "title": "Possible RoPA exemption",
+            "intro": "Your earlier answers indicate that your organisation has fewer than 250 employees, processes personal data only occasionally, and does not process sensitive personal data (Article 9) or criminal-conviction and offence data (Article 10). If your processing is also unlikely to create a risk to people’s rights and freedoms, you may qualify for an exemption from keeping a RoPA. We still recommend creating one to help organise and demonstrate your data-protection practices."
+          },
           "options": {
             "ropa-controller-identities-contacts": {
               "label": "Who is responsible and how to contact them",
@@ -62,7 +65,10 @@ export default {
             "GDPR Article 30(5): the under-250 exemption also depends on processing frequency, risks and data categories",
             "EDPB-endorsed Article 30(5) position paper: assess the exemption by processing activity"
           ],
-          "exemptionNotice": "Your earlier answers indicate that your organisation has fewer than 250 employees, processes personal data only occasionally, and does not process sensitive personal data (Article 9) or criminal-conviction and offence data (Article 10). If your processing is also unlikely to create a risk to people’s rights and freedoms, you may qualify for an exemption from keeping a RoPA. We still recommend creating one to help organise and demonstrate your data-protection practices.",
+          "exemptionNotice": {
+            "title": "Possible RoPA exemption",
+            "intro": "Your earlier answers indicate that your organisation has fewer than 250 employees, processes personal data only occasionally, and does not process sensitive personal data (Article 9) or criminal-conviction and offence data (Article 10). If your processing is also unlikely to create a risk to people’s rights and freedoms, you may qualify for an exemption from keeping a RoPA. We still recommend creating one to help organise and demonstrate your data-protection practices."
+          },
           "options": {
             "ropa-processor-identities-contacts": {
               "label": "Your organisation and the controllers you work for",

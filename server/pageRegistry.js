@@ -111,7 +111,7 @@ export function getPageContent({ pageId, locale, flags = {} }) {
       const translated = { ...base, ...variant }
       const resolved = { ...question, ...translated,
         options: question.options.map(option => ({ ...option, ...base.options[option.id], ...variant.options?.[option.id] })) }
-      if (exemptionNotice && flags.sectionM?.showExemptionNotice) resolved.notice = exemptionNotice
+      if (exemptionNotice && flags.sectionM?.showExemptionNotice) resolved.detectedNotice = exemptionNotice
       if (detectedNotice && flags.sectionC?.suggestedDpoIds.length) {
         resolved.suggestedIds = flags.sectionC.suggestedDpoIds
         resolved.suggestionNotice = suggestionNotice

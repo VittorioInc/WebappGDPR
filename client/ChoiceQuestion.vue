@@ -20,7 +20,6 @@ function select(option) {
   <fieldset :disabled="busy" class="question" :aria-labelledby="`${question.id}-title`">
     <h2 :id="`${question.id}-title`"><HelpText :parts="question.title" /></h2>
     <p v-if="question.prompt"><HelpText :parts="question.prompt" /></p>
-    <p v-if="question.notice" class="question-explanation">{{ question.notice }}</p>
     <div v-if="question.explanation" class="question-explanation">
       <p v-for="(paragraph, index) in question.explanation" :key="index"><HelpText :parts="paragraph" /></p>
       <div v-for="link in question.explanationLinks" :key="link.href"><a :href="link.href" target="_blank" rel="noopener noreferrer">{{ link.label }}</a></div>
@@ -28,7 +27,7 @@ function select(option) {
     <div v-if="question.detectedNotice" class="detected-notice">
       <strong>{{ question.detectedNotice.title }}</strong>
       <p>{{ question.detectedNotice.intro }}</p>
-      <ul><li v-for="item in question.detectedNotice.items" :key="item.label"><strong>{{ item.label }}</strong><span>{{ item.description }}</span></li></ul>
+      <ul v-if="question.detectedNotice.items?.length"><li v-for="item in question.detectedNotice.items" :key="item.label"><strong>{{ item.label }}</strong><span>{{ item.description }}</span></li></ul>
       <p v-if="question.detectedNotice.note">{{ question.detectedNotice.note }}</p>
     </div>
     <p v-if="question.suggestionNotice && modelValue.some(id => question.suggestedIds?.includes(id))" class="suggestion-note">{{ question.suggestionNotice }}</p>

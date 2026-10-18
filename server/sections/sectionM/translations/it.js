@@ -14,7 +14,10 @@ export default {
             "GDPR articolo 30(5): l’esenzione per chi ha meno di 250 dipendenti dipende anche da frequenza, rischi e categorie di dati",
             "Documento sull’articolo 30(5) approvato dall’EDPB: valutare l’esenzione per attività di trattamento"
           ],
-          "exemptionNotice": "Le risposte precedenti indicano che l’organizzazione ha meno di 250 dipendenti, tratta dati personali solo occasionalmente e non tratta categorie particolari di dati personali (articolo 9) né dati relativi a condanne penali e reati (articolo 10). Se inoltre è improbabile che il trattamento comporti un rischio per i diritti e le libertà delle persone, potresti beneficiare di un’esenzione dalla tenuta del RoPA. Raccomandiamo comunque di crearlo per organizzare e dimostrare le pratiche di protezione dei dati.",
+          "exemptionNotice": {
+            "title": "Possibile esenzione dal RoPA",
+            "intro": "Le risposte precedenti indicano che l’organizzazione ha meno di 250 dipendenti, tratta dati personali solo occasionalmente e non tratta categorie particolari di dati personali (articolo 9) né dati relativi a condanne penali e reati (articolo 10). Se inoltre è improbabile che il trattamento comporti un rischio per i diritti e le libertà delle persone, potresti beneficiare di un’esenzione dalla tenuta del RoPA. Raccomandiamo comunque di crearlo per organizzare e dimostrare le pratiche di protezione dei dati."
+          },
           "options": {
             "ropa-controller-identities-contacts": {
               "label": "Chi è responsabile e come contattarlo",
@@ -62,7 +65,10 @@ export default {
             "GDPR articolo 30(5): l’esenzione per chi ha meno di 250 dipendenti dipende anche da frequenza, rischi e categorie di dati",
             "Documento sull’articolo 30(5) approvato dall’EDPB: valutare l’esenzione per attività di trattamento"
           ],
-          "exemptionNotice": "Le risposte precedenti indicano che l’organizzazione ha meno di 250 dipendenti, tratta dati personali solo occasionalmente e non tratta categorie particolari di dati personali (articolo 9) né dati relativi a condanne penali e reati (articolo 10). Se inoltre è improbabile che il trattamento comporti un rischio per i diritti e le libertà delle persone, potresti beneficiare di un’esenzione dalla tenuta del RoPA. Raccomandiamo comunque di crearlo per organizzare e dimostrare le pratiche di protezione dei dati.",
+          "exemptionNotice": {
+            "title": "Possibile esenzione dal RoPA",
+            "intro": "Le risposte precedenti indicano che l’organizzazione ha meno di 250 dipendenti, tratta dati personali solo occasionalmente e non tratta categorie particolari di dati personali (articolo 9) né dati relativi a condanne penali e reati (articolo 10). Se inoltre è improbabile che il trattamento comporti un rischio per i diritti e le libertà delle persone, potresti beneficiare di un’esenzione dalla tenuta del RoPA. Raccomandiamo comunque di crearlo per organizzare e dimostrare le pratiche di protezione dei dati."
+          },
           "options": {
             "ropa-processor-identities-contacts": {
               "label": "L’organizzazione e i titolari per cui opera",
