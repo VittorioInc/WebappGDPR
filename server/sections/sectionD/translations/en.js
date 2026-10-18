@@ -163,8 +163,7 @@ export default {
               "label": "None of the above",
               "description": "No required notice content has been identified from these answers."
             }
-          },
-          "suggestionNotice": "Suggested from earlier answers. You can change this before continuing."
+          }
         }
       }
     }

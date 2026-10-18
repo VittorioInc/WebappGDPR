@@ -163,8 +163,7 @@ export default {
               "label": "Nessuna delle precedenti",
               "description": "Dalle risposte non è stato individuato alcun contenuto obbligatorio dell’informativa."
             }
-          },
-          "suggestionNotice": "Suggerito dalle risposte precedenti. Puoi modificarlo prima di continuare."
+          }
         }
       }
     }

@@ -176,6 +176,9 @@ function deriveSectionDFlags(answers, flags) {
     ['indirect-notice-on-time', 'indirect-notice-late'].includes(indirect)
   const exceptions = needsExceptionQuestion ? selection('section-d-indirect-notice-exception') : null
   const content = needsContentQuestion ? selection('section-d-notice-content') : null
+  // Use the same applicable options as display and submission validation.
+  const contentIds = getPageDefinition({ pageId: 'section-d-notice-content', flags }).questions[0].options
+    .filter(option => !option.exclusive).map(option => option.id)
   const adviceKeys = []
   if (['direct-notice-after-collection', 'no-direct-notice'].includes(direct)) adviceKeys.push('directTiming')
   if (direct === 'direct-subject-already-informed') adviceKeys.push('alreadyInformed')
@@ -183,7 +186,7 @@ function deriveSectionDFlags(answers, flags) {
   if (exceptions?.length && !exceptions.includes('no-article-14-exception')) adviceKeys.push('exceptionScope',
     ...checklistIds(sectionDDefinitions, 'section-d-indirect-notice-exception').filter(id => exceptions.includes(id)))
   // One review reminder, not an individual finding for each unchecked topic.
-  if (content?.length && checklistIds(sectionDDefinitions, 'section-d-notice-content').some(id => !content.includes(id))) {
+  if (content?.length && contentIds.some(id => !content.includes(id))) {
     adviceKeys.push('noticeContentReview')
   }
   const timely = flags.actsAsController && (flags.getsDataDirectly || flags.getsDataFromOtherSources) &&
@@ -193,7 +196,7 @@ function deriveSectionDFlags(answers, flags) {
     needsExceptionQuestion, needsContentQuestion, adviceKeys,
     noticeAssessed: Boolean(direct || indirect || content),
     outcome: !flags.actsAsController && flags.actsAsProcessor ? 'controllerNoticeSkipped'
-      : timely && content && checklistIds(sectionDDefinitions, 'section-d-notice-content').every(id => content.includes(id)) ? 'noticeReported' : null
+      : timely && content && contentIds.every(id => content.includes(id)) ? 'noticeReported' : null
   }
 }
 

@@ -11,17 +11,16 @@ export default {
     "title": "Completamento dichiarato e verifiche saltate",
     "introduction": "Questi messaggi riflettono le vostre risposte e soltanto le verifiche svolte nel questionario. Il rispetto dichiarato dei requisiti non è una verifica indipendente della conformità al GDPR. Le verifiche saltate e gli aspetti che richiedono ulteriori valutazioni giuridiche o dei rischi sono indicati separatamente."
   },
-  "referencesTitle": "Riferimenti alla fonte GDPR",
+  "referencesTitle": "Riferimenti giuridici del questionario",
   "disclaimer": "Questo report è un’autovalutazione, non un parere legale.",
-  "multipleSelected": "{count} opzioni selezionate.",
   "pdf": {
     "title": "Questionario di conformità GDPR",
     "subtitle": "Sintesi della valutazione",
     "generatedAt": "Generato il",
     "answers": "Risposte",
-    "referencesTitle": "Riferimenti alla fonte GDPR",
     "page": "Pagina",
     "of": "di",
     "fileNameSuffix": "sintesi-valutazione"
-  }
+  },
+  "referencesIntroduction": "Questi riferimenti provengono dalle domande a cui hai risposto. Non costituiscono un elenco esaustivo delle fonti a sostegno delle raccomandazioni del rapporto; ulteriori riferimenti e collegamenti sono riportati nelle indicazioni pertinenti."
 }

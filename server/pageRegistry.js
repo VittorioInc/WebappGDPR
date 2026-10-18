@@ -74,6 +74,9 @@ export function getPageDefinition({ pageId, flags = {} }) {
   const both = flags.actsAsController && flags.actsAsProcessor
   const processorOnly = flags.actsAsProcessor && !flags.actsAsController
   return { ...definition, questions: definition.questions.map(question => {
+    if (question.id === 'section-d-notice-content' && !flags.sectionC?.dpoDesignatedReported) {
+      return { ...question, options: question.options.filter(option => option.id !== 'dpo-contact-details') }
+    }
     if (question.id === 'section-e-consent-conditions' && !flags.sectionE?.explicitConsentReported) {
       return { ...question, options: question.options.filter(option => option.id !== 'explicit-consent-where-needed') }
     }
@@ -115,10 +118,6 @@ export function getPageContent({ pageId, locale, flags = {} }) {
         resolved.detectedNotice = { ...detectedNotice, items: resolved.options
           .filter(option => resolved.suggestedIds.includes(option.id))
           .map(({ label, description }) => ({ label, description })) }
-      }
-      if (question.id === 'section-d-notice-content' && flags.sectionC?.dpoDesignatedReported) {
-        resolved.suggestedIds = ['dpo-contact-details']
-        resolved.suggestionNotice = suggestionNotice
       }
       return resolved
     })

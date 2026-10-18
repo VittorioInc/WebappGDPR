@@ -47,7 +47,7 @@ import calibrationEn from '../calibration/translations/report-en.js'
 import calibrationIt from '../calibration/translations/report-it.js'
 import { createCalibrationAssessment } from '../calibration/assessment.js'
 
-// Add migrated section builders here. Neither renderer has section-specific rules.
+// Section builders own their content and ordering. Renderers have no section-specific rules.
 const sections = [
   { create: createSectionAssessment, translations: { en: sectionAEn, it: sectionAIt } },
   { create: createSectionBAssessment, translations: { en: sectionBEn, it: sectionBIt } },
@@ -64,7 +64,6 @@ const sections = [
   { create: createSectionMAssessment, translations: { en: sectionMEn, it: sectionMIt } }
 ]
 const translations = { en, it }
-//parsing
 const paragraph = text => ({ type: 'paragraph', text })
 const heading = text => ({ type: 'heading', level: 3, text })
 
@@ -72,43 +71,52 @@ export function createAssessment({ state, locale }) {
   if (getCurrentPage(state) !== 'assessment') return null
   locale = resolveLocale(locale)
   const copy = translations[locale]
-  //iterate on sections
   const results = sections.map(section => {
     const translated = section.translations[locale]
     return section.create({ flags: state.flags, copy: translated.assessment, questionCopy: translated.pages })
   })
   const calibration = createCalibrationAssessment({ flags: state.flags, copy: locale === 'it' ? calibrationIt : calibrationEn })
   const outcomes = results.flatMap(section => section.outcomes)
-  const supplementary = results.flatMap(section => section.supplementaryBlocks ?? [])
-  const pdfOnly = results.flatMap(section => section.pdfOnlyBlocks ?? [])
   const main = [heading(copy.introduction.title), ...copy.introduction.paragraphs.map(paragraph), ...calibration,
     ...(outcomes.length ? [heading(copy.outcomes.title), paragraph(copy.outcomes.introduction), { type: 'list', items: outcomes }] : []),
     ...results.flatMap(section => section.blocks)]
 
-  // Localise accepted IDs only. The client cannot supply PDF prose or references.
-  const answered = Object.entries(state.answers).filter(([id]) => id !== 'calibration').flatMap(([pageId, selections]) => {
+  // Localise accepted IDs only. Keep calibration and page headings for the answer appendix.
+  const answeredPages = Object.entries(state.answers).map(([pageId, selections]) => {
     const page = getPageContent({ pageId, locale, flags: state.flags })
-    return page.questions.map(question => {
-      const selected = question.options.filter(option => selections[question.id]?.includes(option.id))
-      return { question, selected }
-    })
+    return { page, answers: page.questions.map(question => ({
+      question, selected: question.options.filter(option => selections[question.id]?.includes(option.id))
+    })) }
   })
-  const references = [...new Set(answered.flatMap(({ question }) => question.references ?? []))]
+  // These are questionnaire references, not an exhaustive bibliography for report advice.
+  // Consolidate repeated citation labels; descriptions can differ across questions.
+  // Do not merge distinct paragraph numbers or combined citations.
+  const references = [...new Set(answeredPages.flatMap(({ answers }) =>
+    answers.flatMap(({ question }) => question.references ?? []))
+    .map(reference => reference.split(':')[0].replace(/\s+/g, ' ').trim()))]
   const ending = [
-    ...(references.length ? [heading(copy.referencesTitle), { type: 'list', items: references }] : []),
+    ...(references.length ? [heading(copy.referencesTitle), paragraph(copy.referencesIntroduction), { type: 'list', items: references }] : []),
     { type: 'paragraph', text: copy.disclaimer, muted: true }
   ]
-  const notice = getPageContent({ pageId: 'calibration', locale }).scopeNotice
-  const appendix = [heading(notice.title), paragraph(notice.intro), ...notice.items.flatMap(item => [
-    { type: 'heading', level: 4, text: item.title }, paragraph(item.body), { type: 'quote', text: item.quote, reference: item.reference }
-  ]), paragraph(notice.closing), heading(copy.pdf.answers), ...answered.flatMap(({ question, selected }, index) => [
-    { type: 'heading', level: 4, text: `${index + 1}. ${plainHelpText(question.title)}` },
-    { type: 'paragraph', lead: selected.map(option => plainHelpText(option.label)).join(', '), text: selected.length > 1
-      ? copy.multipleSelected.replace('{count}', selected.length) : plainHelpText(selected[0]?.description ?? '') }
+  // Retained at the user's request. Only recorded choices belong in this appendix;
+  // instructions, examples and the calibration's pre-questionnaire notice do not.
+  const appendix = [heading(copy.pdf.answers), ...answeredPages.flatMap(({ page, answers }) => [
+    heading(plainHelpText(page.title)),
+    ...answers.flatMap(({ question, selected }) => [
+      { type: 'heading', level: 4, text: plainHelpText(question.title) },
+      { type: 'list', items: selected.map(option => plainHelpText(option.label)) }
+    ])
   ])]
   return {
-    screen: { title: copy.title, blocks: [...main, ...supplementary, ...ending] },
-    pdf: { title: copy.pdf.title, subtitle: copy.pdf.subtitle, blocks: [...main, ...appendix, ...supplementary, ...pdfOnly, ...ending],
-      labels: copy.pdf, locale, fileName: `gdpr-${copy.pdf.fileNameSuffix}.pdf` }
+    screen: { title: copy.title, blocks: [
+      ...main,
+      // ...appendix, // Temporarily hidden at the user's request; uncomment to show recorded answers.
+      ...ending
+    ] },
+    pdf: { title: copy.pdf.title, subtitle: copy.pdf.subtitle, blocks: [
+      ...main,
+      // ...appendix, // Temporarily hidden at the user's request; uncomment to show recorded answers.
+      ...ending
+    ], labels: copy.pdf, locale, fileName: `gdpr-${copy.pdf.fileNameSuffix}.pdf` }
   }
 }

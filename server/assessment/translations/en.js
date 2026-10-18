@@ -11,17 +11,16 @@ export default {
     "title": "Reported completion and skipped checks",
     "introduction": "These messages reflect your answers and only the checks performed in this questionnaire. Reported fulfillment is not independent verification of GDPR compliance. Skipped checks and matters needing further legal or risk assessment are identified separately."
   },
-  "referencesTitle": "GDPR source references",
+  "referencesTitle": "Questionnaire legal references",
   "disclaimer": "This is a self-assessment report, not a legal opinion.",
-  "multipleSelected": "{count} options selected.",
   "pdf": {
     "title": "GDPR Compliance Questionnaire",
     "subtitle": "Assessment summary",
     "generatedAt": "Generated",
     "answers": "Answers",
-    "referencesTitle": "GDPR source references",
     "page": "Page",
     "of": "of",
     "fileNameSuffix": "assessment-summary"
-  }
+  },
+  "referencesIntroduction": "These references come from the questions answered. They are not an exhaustive list of sources supporting the report recommendations; additional references and links appear with the relevant guidance."
 }
