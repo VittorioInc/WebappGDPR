@@ -20,6 +20,7 @@ export function createSectionAssessment({ flags, copy, questionCopy }) {
       if (section.legitimateInterestsReported) paragraphs.push(copy.lawfulBasis.legitimateInterests)
     }
     if (section.purposeIds?.length) paragraphs.push(copy.lawfulBasis.purposeLimitation)
+    paragraphs.push(copy.lawfulBasis.storageLimitation)
     if (paragraphs.length && flags.actsAsProcessor) paragraphs.unshift(copy.lawfulBasis.controllerContext)
     add(copy.lawfulBasis.title, paragraphs)
   } else if (flags.actsAsProcessor && section.categoryIds?.length) {
